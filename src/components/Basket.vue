@@ -12,6 +12,7 @@ export default {
   methods: {
     nextPage() {
       this.$router.push('/checkout')
+      this.$store.dispatch('hideMainView')
     }
   }
 };//end export

@@ -16,9 +16,9 @@
     </v-app-bar>
     <v-content   class="animated fadeIn">
       <p>App.vue</p>
-
+      <p v-if="isVisible"><MainView /></p>
       <router-view></router-view>
-            <MainView />
+
     </v-content>
     <v-content transition="slide-x-transition">
 
@@ -28,14 +28,17 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
 import MainView from './views/MainView';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
     MainView
+  },
+  computed: {
+    isVisible () {
+      return this.$store.state.visible;
+    }
   },
   data: () => ({
     //

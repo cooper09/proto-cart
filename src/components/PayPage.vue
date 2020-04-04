@@ -1,48 +1,87 @@
 <template>
   <v-container   class="animated fadeIn container">
-   BasketCheckout Page: 
-   <div v-for="item in selected" :key="item.id" >{{item.title}}
-   <vspacer></vspacer>
-    price: ${{item.price}}
-    <span class="right"><v-btn @click="removeItem(item)">remove</v-btn></span>
+
+
+        <div v-if="!paidFor">
+        <h3> Please complete your purchase using PayPal {{name}} {{address}}</h3>
+        <p> Your Total is:   ${{getQty}}
+          <br/><br/>
+         <v-btn @click="payMethod()" color='blue white--text' >Pay Now</v-btn>
+        <br/><br/>
+          <div ref="paypal"></div>
+        </div>
+
+    <hr />
     <br/><br/>
-   </div>
-   <div>Total: ${{total}} </div>
-   <v-btn class="btn" @click="payMethod()">Pay Now</v-btn>
+        <div v-if="paidFor">
+            <h3>Thanx for Shopping with the Beat 139 Crew. Stay Live!</h3>
+          </div>
+    <br/><br/>
+    <hr />
   </v-container>
 </template>
 
-<script>
-export default {
-  computed:{
-    selected () {
-      return this.$store.state.selected;
-    },
-    total() {
-      return this.$store.state.total;
-    }
-  },
-  data: () => ({
 
-  }),
+<script>
+import axios from 'axios';
+
+export default {
+  mounted: function() {
+    /*  const script = document.createElement('script');
+      script.src = "https://www.paypal.com/sdk/js?client-id=AYvEZYKAlTLeErYUz9KdH_2twNwANrX9gWVlmR3D16GHndWk0lcrSXfDjle3TF-1jdiwfKMyUslZIHrW"
+      script.addEventListener("load", this.setLoaded);
+      document.body.appendChild(script); */
+  },
+  computed: {
+     getCartItems () {
+      return this.$store.getters.getCartItems;
+    },
+    getTotal () {
+        return this.$store.state.totalPrice;
+    },
+    getOne () {
+        return this.$store.state.itemOne;
+    },
+        getTwo () {
+        return this.$store.state.itemTwo;
+    },
+        getThree () {
+        return this.$store.state.itemThree;
+    },
+    getQty() {
+      return this.$store.getters.getQty;
+    },
+  },//end computed
+  
+ //cooper s - picks up the THIS from the current scope and NOT the component scope
+  props:['name',
+          'address',
+          'city',
+          'state',
+          'country',
+          'zip',
+          'phone',
+          'email'
+    ],
+  data () {
+    return {
+      loaded: false,
+      paidFor: false
+    }//end return
+  },//end data
   methods: {
-    nextPage() {
-      this.$router.push('/paypal')
-    },
-    removeItem(item) {
-      console.log("Remove following Item from cart: ", item);
-      this.$store.dispatch('updateCart', item);
-    },
     payMethod() {
-      alert("In paymethod");
       const script = document.createElement('script');
       script.src = "https://www.paypal.com/sdk/js?client-id=AYvEZYKAlTLeErYUz9KdH_2twNwANrX9gWVlmR3D16GHndWk0lcrSXfDjle3TF-1jdiwfKMyUslZIHrW"
       script.addEventListener("load", this.setLoaded);
       document.body.appendChild(script);
+
     },//end payMethods
+    nextPage() {
+      this.$router.push('/')
+    },
     setLoaded: function() {
-      console.log("PayPal - setLoaded this is: ", this)
-      alert("PayPal - setLoaded this is: "+ this)
+      console.log("setLoaded this is: ", this)
         this.loaded = true;
         window.paypal
             .Buttons({
@@ -50,10 +89,10 @@ export default {
                     return actions.order.create({
                         purchase_units:[
                             {
-                                description:'TEST', //this.name,
+                                description: this.name,
                                 amount:{
                                     currency_code: "USD", 
-                                    value:  1 //this.getQty
+                                    value:  this.getQty
                                 }
                             }
                         ]
@@ -106,7 +145,7 @@ export default {
       })//end windows.paypal.Buttons
       .render(this.$refs.paypal )
     },//setLoaded
-  }//end methods
+  },//end methods
 };//end export
 </script>
 <style scoped>
@@ -114,7 +153,7 @@ export default {
     background: #ddd;
     cursor: pointer;
   }
-  .right {
-    float: right;
+    .container {
+    padding: 0;
   }
 </style>

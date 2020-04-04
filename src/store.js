@@ -7,6 +7,7 @@ export default new Vuex.Store({
   state: {
     selected: [],
     total: 0,
+    visible: true,
     products: [
       {
         id: 1,
@@ -167,10 +168,10 @@ export default new Vuex.Store({
       console.log("New Cart: ", newCart );
       state.selected = newCart;
       state.total = state.total - payload.price;
-
-      //state.total = state.total + parseInt(payload.price)
-      //console.log("store.setData: ", state.selected)
-    }
+    },
+    hideMainView(state) {
+      state.visible = false;
+    },
   }, 
   actions: {
     setData(context, data ) {
@@ -179,6 +180,9 @@ export default new Vuex.Store({
     },
     updateCart(context, data) {
       context.commit('updateCart', data);
+    },
+    hideMainView(context) {
+      context.commit('hideMainView');
     }
   },//end actions
   getters: {
