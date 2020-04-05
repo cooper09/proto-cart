@@ -41,7 +41,7 @@ export default {
       document.body.appendChild(script);
     },//end payMethods
     setLoaded: function() {
-      console.log("PayPal - setLoaded this is: ", this)
+      console.log("PayPal - setLoaded this is: ", this.nane)
       alert("PayPal - setLoaded this is: "+ this)
         this.loaded = true;
         window.paypal

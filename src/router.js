@@ -29,7 +29,7 @@ export default new Router({
     {
       path: '/paypal',
       name: 'paypal',
-      component: PayPage
+    //  component: PayPage
     }
   ]
 })

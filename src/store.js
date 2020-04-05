@@ -158,13 +158,18 @@ export default new Vuex.Store({
       //console.log("store.setData: ", state.selected)
     },
     updateCart(state,payload) {
-      console.log("update selected: ", payload.title )
-      let newCart = state.selected.filter(item => {
+      console.log("update selected: ", payload.title );
+
+     let newCart = state.selected.filter(item => {
           console.log("item to remove: ", item.title );
-          if (item.title != payload.title) {
+          if (item.title !== payload.title) {
             return item;
+          }  else {
+            alert("What is our alternative")
           } 
       })
+
+//let newCart = state.selected.filter((item, index) => state.selected.indexOf(item) === index )
       console.log("New Cart: ", newCart );
       state.selected = newCart;
       state.total = state.total - payload.price;
