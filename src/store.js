@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import Cart from '@/helper/cart'
 
 Vue.use(Vuex)
 
@@ -159,20 +160,28 @@ export default new Vuex.Store({
     },
     updateCart(state,payload) {
       console.log("update selected: ", payload.title );
+      const removeItem = Cart.removeItem(payload );
 
-     let newCart = state.selected.filter(item => {
+      console.log("Store.updateCart - new cart: ", removeItem)
+
+    /* let newCart = state.selected.filter(item => {
           console.log("item to remove: ", item.title );
           if (item.title !== payload.title) {
             return item;
-          }  else {
-            alert("What is our alternative")
           } 
       })
 
+      let currentCart = state.selected.filter(item => {
+        console.log("item to remove: ", item.title );
+        if (item.title !== payload.title) {
+          return item;
+        } 
+    })
+ 
 //let newCart = state.selected.filter((item, index) => state.selected.indexOf(item) === index )
       console.log("New Cart: ", newCart );
       state.selected = newCart;
-      state.total = state.total - payload.price;
+      state.total = state.total - payload.price; */
     },
     hideMainView(state) {
       state.visible = false;

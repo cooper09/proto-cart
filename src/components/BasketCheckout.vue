@@ -1,8 +1,8 @@
 <template>
   <v-container   class="animated fadeIn container">
    BasketCheckout Page: 
-   <div v-for="item in selected" :key="item.id" >{{item.title}}
-   <vspacer></vspacer>
+   <div v-for="item in selectedItem" :key="item.id" >{{item.title}}
+  
     price: ${{item.price}}
     <span class="right"><v-btn @click="removeItem(item)">remove</v-btn></span>
     <br/><br/>
@@ -15,12 +15,12 @@
 <script>
 export default {
   computed:{
-    selected () {
+    selectedItem () {
       return this.$store.state.selected;
     },
     total() {
       return this.$store.state.total;
-    }
+    },
   },
   data: () => ({
 

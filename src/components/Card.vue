@@ -29,6 +29,7 @@
 
 <script>
 import Basket from '@/components/Basket';
+import Cart from '@/helper/cart'
 
 export default {
     components: {
@@ -52,14 +53,15 @@ export default {
       let hello = "We shall Overcome"
 
     },
-    selected() {
+/*    selected() {
       alert("Selected Something")
-    },
+    }, */
     addToCart(item){ 
         //add to cart update state selected list with an action
         console.log ("Card.addToCart - Add ", item, " to the Cart")   
      //   this.$router.push('/basket');
-        this.$store.dispatch('setData', item )
+        this.$store.dispatch('setData', item );
+        Cart.addItem(item.title, 1)
     }
   },//end methods
 };//end export

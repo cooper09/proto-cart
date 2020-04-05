@@ -3,7 +3,7 @@
   <v-container class="animated fadeIn">
 
     <!-- for the length of the product list, build a card and display it -->
-    Currently selected: {{selected}}
+    Currently selected: {{selectedItem}}
     <v-layout row wrap >
       <v-flex xs12 sm6 md4 lg3 v-for="product in mydata" :key="product.id">
         <Card v-bind:product="product" /> 
@@ -39,7 +39,7 @@ export default {
     mydata () {
       return this.$store.state.products;
     },
-    selected () {
+    selectedItem () {
       return this.$store.state.selected;
     }
   },

@@ -18,7 +18,6 @@
       <p>App.vue</p>
       <p v-if="isVisible"><MainView /></p>
       <router-view></router-view>
-
     </v-content>
     <v-content transition="slide-x-transition">
 
