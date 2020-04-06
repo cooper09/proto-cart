@@ -2,7 +2,7 @@
   <v-app>
     <v-app-bar app>
       <v-toolbar-title class="headline text-uppercase">
-        <span>HarlemJambo</span>
+        <span>Sonya Enterprises </span>
         <span class="font-weight-light leftmargin" >VIRTUAL MALL</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
