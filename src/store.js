@@ -183,6 +183,9 @@ export default new Vuex.Store({
     hideMainView(state) {
       state.visible = false;
     },
+    showMainView(state){
+      state.visible = true;
+    }
   }, 
   actions: {
     setData(context, data ) {
@@ -194,6 +197,9 @@ export default new Vuex.Store({
     },
     hideMainView(context) {
       context.commit('hideMainView');
+    },
+    showMainView(context) {
+      context.commit('showMainView');
     },
     setCart(context, data ) {
       context.commit('setCart', data);

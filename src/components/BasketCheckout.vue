@@ -1,7 +1,7 @@
 <template>
   <v-container   class="animated fadeIn container">
+    <span class="right"><v-btn @click="showStore()">Back to Shop</v-btn></span>
    BasketCheckout Page: 
-      {{displayCart}}
       <br/><br/>
       new Cart: {{newCart}}
     <br/><br/>
@@ -30,9 +30,6 @@ export default {
     total() {
       return this.$store.state.total;
     },
-    displayCart() {
-      return Cart.displayCart();
-    },
     newCart() {
       return this.$store.state.cart
     }
@@ -47,6 +44,10 @@ export default {
     removeItem(item) {
       console.log("Remove following Item from cart: ", item);
       this.$store.dispatch('updateCart', item);
+    },
+    showStore() {
+      //this.$router.push('/')
+      this.$store.dispatch('showMainView')
     },
     payMethod() {
       alert("In paymethod");
