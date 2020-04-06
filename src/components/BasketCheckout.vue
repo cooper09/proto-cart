@@ -1,10 +1,17 @@
 <template>
   <v-container   class="animated fadeIn container">
    BasketCheckout Page: 
-   <div v-for="item in selectedItem" :key="item.id" >{{item.title}}
-  
-    price: ${{item.price}}
-    <span class="right"><v-btn @click="removeItem(item)">remove</v-btn></span>
+      {{displayCart}}
+      <br/><br/>
+      new Cart: {{newCart}}
+    <br/><br/>
+    items: 
+    <div v-for="goodie in newCart" :key="id" >{{goodie.product.name}}
+      quantity: {{goodie.quantity}}
+      price: ${{goodie.product.price}}
+       <span class="right"><v-btn @click="removeItem(goodie)">remove</v-btn></span>
+      <br/><br/>
+    </div>
     <br/><br/>
    </div>
    <div>Total: ${{total}} </div>
@@ -13,6 +20,8 @@
 </template>
 
 <script>
+import Cart from '@/helper/cart'
+
 export default {
   computed:{
     selectedItem () {
@@ -21,6 +30,12 @@ export default {
     total() {
       return this.$store.state.total;
     },
+    displayCart() {
+      return Cart.displayCart();
+    },
+    newCart() {
+      return this.$store.state.cart
+    }
   },
   data: () => ({
 

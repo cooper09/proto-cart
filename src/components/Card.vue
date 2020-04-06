@@ -58,10 +58,13 @@ export default {
     }, */
     addToCart(item){ 
         //add to cart update state selected list with an action
-        console.log ("Card.addToCart - Add ", item, " to the Cart")   
-     //   this.$router.push('/basket');
+        console.log ("Card.addToCart - Add ", item.id, " to the Cart")   
         this.$store.dispatch('setData', item );
-        Cart.addItem(item.title, 1)
+        console.log("addToCart id: ", typeof(item.id))
+
+        const ourCart = Cart.addItem(item.id, 1);
+        console.log("Card.addToCart - our new cart: ", ourCart);
+        this.$store.dispatch('setCart', ourCart );
     }
   },//end methods
 };//end export

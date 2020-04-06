@@ -9,6 +9,7 @@ export default new Vuex.Store({
     selected: [],
     total: 0,
     visible: true,
+    cart: {},
     products: [
       {
         id: 1,
@@ -160,28 +161,24 @@ export default new Vuex.Store({
     },
     updateCart(state,payload) {
       console.log("update selected: ", payload.title );
-      const removeItem = Cart.removeItem(payload );
+      const newCart = Cart.removeItem(payload );
 
-      console.log("Store.updateCart - new cart: ", removeItem)
+      console.log("Store.updateCart - new cart: ", newCart);
+      state.cart = newCart;
 
-    /* let newCart = state.selected.filter(item => {
-          console.log("item to remove: ", item.title );
-          if (item.title !== payload.title) {
-            return item;
-          } 
-      })
-
-      let currentCart = state.selected.filter(item => {
-        console.log("item to remove: ", item.title );
-        if (item.title !== payload.title) {
-          return item;
-        } 
-    })
- 
-//let newCart = state.selected.filter((item, index) => state.selected.indexOf(item) === index )
-      console.log("New Cart: ", newCart );
-      state.selected = newCart;
-      state.total = state.total - payload.price; */
+      let total = 0;
+      for (var i in newCart) {
+        let entry = newCart[i];
+        let {quantity, product, cost} = entry
+        console.log(`- ${product.name} x ${quantity} ${cost}`)
+        total += cost 
+        console.log("Store.updateCart - total:  ", total );
+        
+      }//end for loop
+      state.total  = total;
+    },
+    setCart(state, payload ){
+      state.cart = payload
     },
     hideMainView(state) {
       state.visible = false;
@@ -197,6 +194,9 @@ export default new Vuex.Store({
     },
     hideMainView(context) {
       context.commit('hideMainView');
+    },
+    setCart(context, data ) {
+      context.commit('setCart', data);
     }
   },//end actions
   getters: {

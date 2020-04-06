@@ -3,39 +3,39 @@ const _ = require('lodash');
 //Use a dictionary to keep track of what item is what
 
 const Inventory = {
-    product1: {
+    1: {
       name: "Product 1",
       price: 50,
     },
-    product2: {
+    2: {
       name: "Product 2",
       price: 35,
     },
-    product3: {
+    3: {
       name: "Product 3",
       price: 110,
     },
-    product4: {
+    4: {
       name: "Product 4",
       price: 50,
     },
-    product5: {
+    5: {
       name: "Product 5",
       price: 35,
     },
-    product6: {
+    6: {
       name: "Product 6",
       price: 110,
     },
-    product7: {
+    7: {
       name: "Product 7",
       price: 50,
     },
-    product8: {
+    8: {
       name: "Product 8",
       price: 35,
     },
-    product9: {
+    9: {
       name: "Product 9",
       price: 110,
     }
@@ -53,34 +53,61 @@ const Cart = new function () {
         }else{
           this.items[id] = qty
         }
-        this.generateCartObject()
+         const newCart = this.generateCartObject();
+         console.log("Cart.addItem - newCart=: " , newCart )
+         return newCart;
       }
 
     this.removeItem = ( item) => {
         console.log("Cart.updateCart - Removing ", item.id  ," from Cart.");
         this.items[item.id] -= 1
-        this.generateCartObject();
-        return("here is our new Cart...")
+        const newCart = this.generateCartObject();
+        console.log("Cart.removeItem: ", newCart )
+        return(newCart)
     }//end removeItem
 
+    this.displayCart = ()=>{
+        if (_.isEmpty(this.cartObj)){
+          console.log("Cart is Empty")
+        }else{
+          console.log("Cart Items: ", this.cartObj )
+          let total = 0
+          for( var i in this.cartObj){
+            let entry = this.cartObj[i]
+            let {quantity, product, cost} = entry
+            console.log(`- ${product.name} x ${quantity} ${cost}`)
+            total += cost
+          }
+          console.log(`Total: ${total}`)
+        }
+        return this.cartObj
+      }//end displayCart
+
+// cooper s - always keep our cart objects rip-roaring and ready to go....
     this.generateCartObject = () => {
         console.log("GenerateCartObject - items: ", this.items )
         this.cartObj = []
         if (!_.isEmpty(this.items )) {
             let ids = Object.keys(this.items);
-            console.log("generateCartObject - list of ids: ", ids );
             for(var i=0; i<ids.length; i++){
-                console.log("id: ", ids[i])
-                let productId = ids[i]
-                let quantity = parseInt(this.items[productId])
-                console.log("our product: ", productId, " quantity: ", quantity );
-                console.log("our items: ", this.items[productId] );
-                console.log("our product Inventory: ", Inventory[parseInt(productId)]);
-                let product = Inventory[productId]
-                console.log("chosen product: ", product );
+                let productIdx = ids[i]
+                let quantity = parseInt(this.items[productIdx])
+                let product = Inventory[productIdx]
+                let id = parseInt(ids[i])
+                console.log("chosen product: ", ids[i] );
+                console.log("chosen product price: ", product.price );
+                if(quantity>0){
+                    let cost = quantity * product.price
+                    let item = { id, quantity, product, cost }
+                    console.log("generateCartObject - final item: ", item )         
+                    this.cartObj.push(item)
+                    console.log("generateCartObject - final item: ", this.cartObj )
+                  //  
+                  }//end iffy
+            //return this.cartObj; 
             }//end for 
         }//end iffy
-
+        return this.cartObj; 
     }//end generateCartObject
 }//end Cart
 
