@@ -15,7 +15,9 @@
     <br/><br/>
    </div>
    <div>Total: ${{total}} </div>
+   <br/><br/>
    <v-btn class="btn" @click="payMethod()">Pay Now</v-btn>
+   <div ref="paypal"></div>
   </v-container>
 </template>
 
@@ -50,77 +52,40 @@ export default {
       this.$store.dispatch('showMainView')
     },
     payMethod() {
-      alert("In paymethod");
+
       const script = document.createElement('script');
       script.src = "https://www.paypal.com/sdk/js?client-id=AYvEZYKAlTLeErYUz9KdH_2twNwANrX9gWVlmR3D16GHndWk0lcrSXfDjle3TF-1jdiwfKMyUslZIHrW"
       script.addEventListener("load", this.setLoaded);
       document.body.appendChild(script);
     },//end payMethods
+    // cooper s - once the paypal script is added to the page, time to go to work
     setLoaded: function() {
-      console.log("PayPal - setLoaded this is: ", this.nane)
-      alert("PayPal - setLoaded this is: "+ this)
-        this.loaded = true;
-        window.paypal
+      console.log("Paypal loaded: ", this.newCart[0].product.name );
+      this.loaded = true;
+      window.paypal
             .Buttons({
-                createOrder: (data, actions ) => {
-                    return actions.order.create({
-                        purchase_units:[
-                            {
-                                description:'TEST', //this.name,
-                                amount:{
-                                    currency_code: "USD", 
-                                    value:  1 //this.getQty
-                                }
-                            }
-                        ]
-                    })
-                },
-                onApprove: async (data, actions ) => {
+              createOrder: (data, actions ) =>{
+                console.log("PayPal Button: ", data );
+                return  actions.order.create({
+                  purchase_units: [
+                    {
+                      description: "TEST",
+                      amount:{
+                        currency_code: "USD",
+                        value: 1
+                      }
+                    }
+                  ]//end purchase units
+                });//end order.create
+              },//end createOrder 
+              onApprove: async (data, actions ) =>{
                   const order = await actions.order.capture();
                   this.paidFor = true;
                   console.log("Payment approved: ", data.ID );
                   console.log("Payment info: ", JSON.stringify(data));
-
-                  // cooper s - send captured data to DB
-                  console.log("Send data to DB " , this.name , " address: ", this.address, " city: ", this.city," state: ", this.state, " zip: ", this.zip, " phone: ", this.phone, " email: ", this.email );
-
-                  var timestamp = new Date();
-
-                  var infoObj = {
-                    orderId: data.orderID,
-                    paymentId: data.paymentID,
-                    payerId:data.payerID,
-                    items: this.getCartItems,
-                    amount:this.getQty,
-                    name: this.name,
-                    address: this.address,
-                    city: this.city,
-                    state: this.state,
-                    country: this.country,
-                    zip: this.zip,
-                    phone: this.phone,
-                    email: this.email,
-                    timestamp: timestamp
-                  }
-
-                console.log("PayPage sending data: ",  infoObj, " to database ");
-                  const url = `https://sleepy-everglades-99189.herokuapp.com/beatcart`;
-
-                  axios.post(url,infoObj)
-                    .then(function (response) {
-                      console.log("POST: ", response.data);
-                    //clear fields
-                    })
-                    .catch(function (error) {
-                      console.log("POST Error: ",  error);
-                    }); 
-
-              this.$store.dispatch("clearCart");
-              //this.$router.push('/')
-              
-        }// on Approval
-      })//end windows.paypal.Buttons
-      .render(this.$refs.paypal )
+              }//end onApprove
+        })//end paypall Button
+      .render(this.$refs.paypal )  
     },//setLoaded
   }//end methods
 };//end export
