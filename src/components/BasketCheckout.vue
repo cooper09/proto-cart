@@ -1,11 +1,7 @@
 <template>
   <v-container   class="animated fadeIn container">
     <span class="right"><v-btn @click="showStore()">Back to Shop</v-btn></span>
-   BasketCheckout Page: 
-      <br/><br/>
-      new Cart: {{newCart}}
-    <br/><br/>
-    items: 
+  <br/></br>
     <div v-for="goodie in newCart" :key="id" >{{goodie.product.name}}
       quantity: {{goodie.quantity}}
       price: ${{goodie.product.price}}
@@ -17,6 +13,7 @@
    <div>Total: ${{total}} </div>
    <br/><br/>
    <v-btn class="btn" @click="payMethod()">Pay Now</v-btn>
+   <br/><br/>
    <div ref="paypal"></div>
   </v-container>
 </template>
@@ -52,7 +49,6 @@ export default {
       this.$store.dispatch('showMainView')
     },
     payMethod() {
-
       const script = document.createElement('script');
       script.src = "https://www.paypal.com/sdk/js?client-id=AYvEZYKAlTLeErYUz9KdH_2twNwANrX9gWVlmR3D16GHndWk0lcrSXfDjle3TF-1jdiwfKMyUslZIHrW"
       script.addEventListener("load", this.setLoaded);
@@ -83,6 +79,11 @@ export default {
                   this.paidFor = true;
                   console.log("Payment approved: ", data.ID );
                   console.log("Payment info: ", JSON.stringify(data));
+
+            //cooper s - reserve this for adding data to DB in the future
+                // for now lets start fresh...
+                this.$store.dispatch("showMainView");
+
               }//end onApprove
         })//end paypall Button
       .render(this.$refs.paypal )  
