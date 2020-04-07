@@ -4,17 +4,16 @@
   <br/></br>
   <div>
     <v-list enabled>
-      <v-subheader>Items {{newCart}}</v-subheader>
+      <v-header>Selected Items</v-header>
       <v-list-item-group v-model="newCart" color="primary">
         <v-list-item
           v-for="(item, i) in newCart"
           :key="i"
-          class="outline"
+          class=""
         >
-
         
           <v-list-item-avatar class="margins">
-            <img src='masks.jpg' width="24" height="24" >
+            <img :src='item.product.image' width="24" height="24" >
           </v-list-item-avatar>
           <v-list-item-content>
             <v-list>
@@ -27,9 +26,8 @@
             </v-list>
 
             <span class="right"><v-btn @click="removeItem(item)">remove</v-btn></span>
-    
         </v-list-item>
-        
+                
       </v-list-item-group>
                   
     </v-list>

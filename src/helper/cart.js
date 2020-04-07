@@ -5,39 +5,48 @@ const _ = require('lodash');
 const Inventory = {
     1: {
       name: "Product 1",
-      price: 50,
+      price: 0.01,
+      image: 'masks.jpg'
     },
     2: {
       name: "Product 2",
       price: 35,
+      image: 'masks.jpg'
     },
     3: {
       name: "Product 3",
       price: 110,
+      image: 'masks.jpg'
     },
     4: {
       name: "Product 4",
       price: 50,
+      image: 'masks.jpg'
     },
     5: {
       name: "Product 5",
       price: 35,
+      image: 'masks.jpg'
     },
     6: {
       name: "Product 6",
       price: 110,
+      image: 'masks.jpg'
     },
     7: {
       name: "Product 7",
       price: 50,
+      image: 'masks.jpg'
     },
     8: {
       name: "Product 8",
       price: 35,
+      image: 'masks.jpg'
     },
     9: {
       name: "Product 9",
       price: 110,
+      image: 'masks.jpg'
     }
   }//end Inventory
   
