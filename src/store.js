@@ -15,7 +15,7 @@ export default new Vuex.Store({
         id: 1,
         title: 'Product 1',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-        price: 50,
+        price: 0.01,
         ratings: 3,
         reviews: 5,
         isAddedToCart: false,
@@ -171,14 +171,22 @@ export default new Vuex.Store({
         let entry = newCart[i];
         let {quantity, product, cost} = entry
         console.log(`- ${product.name} x ${quantity} ${cost}`)
-        total += cost 
+        total += cost
+       
         console.log("Store.updateCart - total:  ", total );
-        
+        alert("Store.updateCart - total:  "+ total)
       }//end for loop
       state.total  = total;
     },
     setCart(state, payload ){
       state.cart = payload
+      //console.log(`- ${product.name} x ${quantity} ${payload}`)
+      console.log("Store.setCart - payload: ", payload[0].cost)
+
+      state.total += parseFloat(payload[0].cost);
+     
+      console.log("Store.updateCart -  state.total:  ", state.total );
+
     },
     hideMainView(state) {
       state.visible = false;
@@ -206,8 +214,8 @@ export default new Vuex.Store({
     }
   },//end actions
   getters: {
-    addTotal: state => {
-     return  "$20"
+    floatTotal: state => {
+     return  parseFloat(state.total);
     }
   },
 })

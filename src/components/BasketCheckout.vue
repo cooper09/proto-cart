@@ -4,14 +4,13 @@
   <br/></br>
   <div>
     <v-list enabled>
-      <v-header>Selected Items</v-header>
+      <h3>Selected Items</h3>
       <v-list-item-group v-model="newCart" color="primary">
         <v-list-item
           v-for="(item, i) in newCart"
           :key="i"
           class=""
         >
-        
           <v-list-item-avatar class="margins">
             <img :src='item.product.image' width="24" height="24" >
           </v-list-item-avatar>
@@ -78,7 +77,8 @@ export default {
       this.$router.push('/paypal')
     },
    
-  }//end methods
+  },//end methods
+
 };//end export
 </script>
 <style scoped>

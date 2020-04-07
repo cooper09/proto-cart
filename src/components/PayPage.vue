@@ -2,13 +2,16 @@
   <v-container   class="animated fadeIn container">
     Your Total is: ${{getTotal}}
     <span class="right"><v-btn @click="showStore()">Back to Shop</v-btn></span>
+    <br/><br/>
     <center><v-layout row wrap align-center align-content-space-between>  
-       <v-row align="center">
+
+       <v-row align="center" xs12>
         <v-form
           ref="form"
           v-model="valid"
           :lazy-validation="lazy"
           class="myform"
+          xs12
         >
         <v-text-field
             v-model="name"
@@ -98,7 +101,8 @@
         </v-btn>
         </v-form>
     </v-row>
-      </v-layout></center>
+  
+  </v-layout></center>
 
    
         <br/><br/>
@@ -111,6 +115,7 @@
           </div>
     <br/><br/>
     <hr />
+
   </v-container>
 </template>
 
@@ -301,5 +306,9 @@ export default {
   }
   .myform {
     width: 100%;
+    margin-left: 1em;
+    margin-right: 1em;
   }
+
+
 </style>
