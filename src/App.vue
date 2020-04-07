@@ -2,7 +2,7 @@
   <v-app>
     <v-app-bar app>
       <v-toolbar-title class="headline text-uppercase">
-        <span>Sonya Enterprises </span>
+        <span>HarlemBased Vendors</span>
         <span class="font-weight-light leftmargin" >VIRTUAL MALL</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
@@ -15,7 +15,6 @@
       </v-btn>
     </v-app-bar>
     <v-content   class="animated fadeIn">
-      <p>App.vue</p>
       <p v-if="isVisible"><MainView /></p>
       <router-view></router-view>
     </v-content>

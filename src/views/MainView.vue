@@ -1,6 +1,5 @@
 <template>
   <div>
-    <p>MainView.vue </p>
     <CardList />
   </div>
 </template>
@@ -9,11 +8,8 @@
 import CardList from '@/components/CardList';
 
 export default {
-  props:["visible"],
   computed:{
-    isVisible () {
-      return this.$store.state.visible;
-    }
+    //if we ever need to bring in data from the store
   },
   components: {
     CardList,

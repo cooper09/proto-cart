@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+
 import Basket from './components/Basket.vue'
 import BasketCheckout from './components/BasketCheckout.vue'
 import PayPage from './components/PayPage.vue'
