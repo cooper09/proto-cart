@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
 import Basket from './components/Basket.vue'
 import BasketCheckout from './components/BasketCheckout.vue'
 import PayPage from './components/PayPage.vue'
@@ -29,7 +28,7 @@ export default new Router({
     {
       path: '/paypal',
       name: 'paypal',
-    //  component: PayPage
+      component: PayPage
     }
   ]
 })

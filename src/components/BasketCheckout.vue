@@ -2,7 +2,7 @@
   <v-container   class="animated fadeIn container">
     <span class="right"><v-btn @click="showStore()">Back to Shop</v-btn></span>
   <br/></br>
-    <div v-for="goodie in newCart" :key="id" >{{goodie.product.name}}
+    <div v-for="goodie in newCart" :key="goodie.id" >{{goodie.product.name}}
       quantity: {{goodie.quantity}}
       price: ${{goodie.product.price}}
        <span class="right"><v-btn @click="removeItem(goodie)">remove</v-btn></span>
@@ -12,7 +12,7 @@
    </div>
    <div>Total: ${{total}} </div>
    <br/><br/>
-   <v-btn class="btn" @click="payMethod()">Pay Now</v-btn>
+   <v-btn class="btn" @click="showPayPal()">Pay Now</v-btn>
    <br/><br/>
    <div ref="paypal"></div>
   </v-container>
@@ -47,6 +47,10 @@ export default {
     showStore() {
       //this.$router.push('/')
       this.$store.dispatch('showMainView')
+    },
+    showPayPal(){
+      console.log("Lets to the paypal page...")
+      this.$router.push('/paypal')
     },
     payMethod() {
       const script = document.createElement('script');
@@ -96,7 +100,5 @@ export default {
     background: #ddd;
     cursor: pointer;
   }
-  .right {
-    float: right;
-  }
+
 </style>
