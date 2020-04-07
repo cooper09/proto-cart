@@ -2,12 +2,42 @@
   <v-container   class="animated fadeIn container">
     <span class="right"><v-btn @click="showStore()">Back to Shop</v-btn></span>
   <br/></br>
-    <div v-for="goodie in newCart" :key="goodie.id" >{{goodie.product.name}}
-      quantity: {{goodie.quantity}}
-      price: ${{goodie.product.price}}
-       <span class="right"><v-btn @click="removeItem(goodie)">remove</v-btn></span>
-      <br/><br/>
-    </div>
+  <div>
+    <v-list enabled>
+      <v-subheader>Items {{newCart}}</v-subheader>
+      <v-list-item-group v-model="newCart" color="primary">
+        <v-list-item
+          v-for="(item, i) in newCart"
+          :key="i"
+          class="outline"
+        >
+
+        
+          <v-list-item-avatar class="margins">
+            <img src='masks.jpg' width="24" height="24" >
+          </v-list-item-avatar>
+          <v-list-item-content>
+            <v-list>
+             {{item.product.name}} <span class="left">price: ${{item.product.price}}</span>
+            </v-list>
+          </v-list-item-content>
+
+            <v-list>
+              <v-text-field label="Quantity" dense counter-value :value="item.quantity" class="margins"></v-text-field>
+            </v-list>
+
+            <span class="right"><v-btn @click="removeItem(item)">remove</v-btn></span>
+    
+        </v-list-item>
+        
+      </v-list-item-group>
+                  
+    </v-list>
+        <br/><br/>
+         
+        <hr />
+  </div>
+
     <br/><br/>
    </div>
    <div>Total: ${{total}} </div>
@@ -37,9 +67,6 @@ export default {
 
   }),
   methods: {
-    nextPage() {
-      this.$router.push('/paypal')
-    },
     removeItem(item) {
       console.log("Remove following Item from cart: ", item);
       this.$store.dispatch('updateCart', item);
@@ -52,46 +79,7 @@ export default {
       console.log("Lets to the paypal page...")
       this.$router.push('/paypal')
     },
-    payMethod() {
-      const script = document.createElement('script');
-      script.src = "https://www.paypal.com/sdk/js?client-id=AYvEZYKAlTLeErYUz9KdH_2twNwANrX9gWVlmR3D16GHndWk0lcrSXfDjle3TF-1jdiwfKMyUslZIHrW"
-      script.addEventListener("load", this.setLoaded);
-      document.body.appendChild(script);
-    },//end payMethods
-    // cooper s - once the paypal script is added to the page, time to go to work
-    setLoaded: function() {
-      console.log("Paypal loaded: ", this.newCart[0].product.name );
-      this.loaded = true;
-      window.paypal
-            .Buttons({
-              createOrder: (data, actions ) =>{
-                console.log("PayPal Button: ", data );
-                return  actions.order.create({
-                  purchase_units: [
-                    {
-                      description: "TEST",
-                      amount:{
-                        currency_code: "USD",
-                        value: 1
-                      }
-                    }
-                  ]//end purchase units
-                });//end order.create
-              },//end createOrder 
-              onApprove: async (data, actions ) =>{
-                  const order = await actions.order.capture();
-                  this.paidFor = true;
-                  console.log("Payment approved: ", data.ID );
-                  console.log("Payment info: ", JSON.stringify(data));
-
-            //cooper s - reserve this for adding data to DB in the future
-                // for now lets start fresh...
-                this.$store.dispatch("showMainView");
-
-              }//end onApprove
-        })//end paypall Button
-      .render(this.$refs.paypal )  
-    },//setLoaded
+   
   }//end methods
 };//end export
 </script>
@@ -100,5 +88,10 @@ export default {
     background: #ddd;
     cursor: pointer;
   }
-
+  .left {
+    margin-left: 2em;
+  }
+  margins {
+    margin-right: 2em;
+  }
 </style>

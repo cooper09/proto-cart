@@ -1,6 +1,6 @@
 <template>
   <v-container   class="animated fadeIn container">
-    ${{getTotal}}
+    Your Total is: ${{getTotal}}
     <span class="right"><v-btn @click="showStore()">Back to Shop</v-btn></span>
     <center><v-layout row wrap align-center align-content-space-between>  
        <v-row align="center">
