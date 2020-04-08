@@ -24,7 +24,7 @@
               <v-text-field label="Quantity" dense counter-value :value="item.quantity" class="margins"></v-text-field>
             </v-list>
 
-            <span class="right"><v-btn @click="removeItem(item)">remove</v-btn></span>
+            <span class="right"><v-btn @click="removeItem(item)">remove item</v-btn></span>
         </v-list-item>
                 
       </v-list-item-group>

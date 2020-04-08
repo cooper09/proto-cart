@@ -1,7 +1,34 @@
 <template>
   <v-container   class="animated fadeIn container">
+        <span class="right"><v-btn @click="showStore()">Back to Shop</v-btn></span>
+    <v-list enabled>
+      <h3>Selected Items</h3>
+      <v-list-item-group v-model="newCart" color="primary">
+        <v-list-item
+          v-for="(item, i) in newCart"
+          :key="i"
+          class=""
+        >
+          <v-list-item-avatar class="margins">
+            <img :src='item.product.image' width="24" height="24" >
+          </v-list-item-avatar>
+          <v-list-item-content>
+            <v-list>
+             {{item.product.name}} <span class="left">price: ${{item.product.price}}</span>
+            </v-list>
+          </v-list-item-content>
+
+            <v-list>
+              <v-text-field label="Quantity" dense counter-value :value="item.quantity" class="margins"></v-text-field>
+            </v-list>
+
+            <span class="right"><v-btn @click="removeItem(item)">remove item</v-btn></span>
+        </v-list-item>
+                
+      </v-list-item-group>
+                  
+    </v-list>
     Your Total is: ${{getTotal}}
-    <span class="right"><v-btn @click="showStore()">Back to Shop</v-btn></span>
     <br/><br/>
     <center><v-layout row wrap align-center align-content-space-between>  
 
@@ -130,6 +157,9 @@ export default {
     getTotal () {
         return this.$store.state.total;
     },
+    newCart() {
+      return this.$store.state.cart
+    },
   },//end computed
   
  //cooper s - picks up the THIS from the current scope and NOT the component scope
@@ -192,6 +222,10 @@ export default {
   methods: {
     showStore() {
       this.$store.dispatch('showMainView')
+    },
+    removeItem(item) {
+      console.log("Remove following Item from cart: ", item);
+      this.$store.dispatch('updateCart', item);
     },
     payMethod() {
       const script = document.createElement('script');
@@ -273,7 +307,7 @@ export default {
       .render(this.$refs.paypal )
     },//setLoaded
     validate () {
-        if (this.$refs.form.validate()) {
+        if (this.$refs.form.validate()){
           this.snackbar = true;
           //alert("Send data to database - selected:  "+ this.select );
           const dataObj = {
@@ -287,7 +321,14 @@ export default {
               email: this.email
           }//end dataObj
           //this.$refs.form.reset();
-          this.payMethod()
+          console.log ("Validate - current total: ", this.getTotal);
+          if (this.getTotal !== 0 ) {
+            this.payMethod()
+          } else {
+            alert("You cannot purchase if your total is $0. Please add items to your cart.");
+            this.$refs.form.reset(); 
+            this.$store.dispatch('showMainView')
+          }
         }
       },
       reset () {

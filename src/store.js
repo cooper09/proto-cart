@@ -13,9 +13,9 @@ export default new Vuex.Store({
     products: [
       {
         id: 1,
-        title: 'Tactical Knife - 400',
-        description: 'Razor Tactical Spring Assisted Open Tactical Rescue Pocket Knife Bowie Blue',
-        price: 29.99,
+        title: 'Box of 50',
+        description: 'Free Shipping',
+        price: 50.00,
         ratings: 3,
         reviews: 5,
         isAddedToCart: false,
@@ -23,7 +23,7 @@ export default new Vuex.Store({
         isFavourite: false,
         quantity: 1,
         category: 0,
-        image: 'tactical-knife.jpg'
+        image: 'boxes.jpg'
       }
     ],
     userInfo: {
@@ -60,7 +60,7 @@ export default new Vuex.Store({
         total += cost
        
         console.log("Store.updateCart - total:  ", total );
-        alert("Store.updateCart - total:  "+ total)
+        //alert("Store.updateCart - total:  "+ total)
       }//end for loop
       state.total  = total;
     },

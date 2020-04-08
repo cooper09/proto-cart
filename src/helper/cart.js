@@ -4,9 +4,9 @@ const _ = require('lodash');
 
 const Inventory = {
     1: {
-      name: "Tactical Knife - 400",
-      price: 29.99,
-      image: 'tactical-knife.jpg'
+      name: "Box of 50",
+      price: 50.00,
+      image: 'masks.jpg'
     },
     
   }//end Inventory

@@ -7,7 +7,7 @@
         <v-responsive class="pt-4">
             
  <!-- <center><img src="https://via.placeholder.com/300" /></center> -->
-            <center><img src="tactical-knife.jpg" /></center>
+            <center><img src="boxes.jpg" /></center>
         </v-responsive>
         <v-card-text>
             <div class="subheading">{{this.product.title}}</div>
