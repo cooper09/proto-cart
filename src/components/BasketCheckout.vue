@@ -37,7 +37,7 @@
 
     <br/><br/>
    </div>
-   <div>Total: ${{total}} </div>
+   <div>Total: ${{floatTotal}} </div>
    <br/><br/>
    <v-btn class="btn" @click="showPayPal()">Pay Now</v-btn>
    <br/><br/>
@@ -58,6 +58,9 @@ export default {
     },
     newCart() {
       return this.$store.state.cart
+    },
+    floatTotal() {
+      return this.$store.getters.floatTotal
     }
   },
   data: () => ({
@@ -76,6 +79,9 @@ export default {
       console.log("Lets to the paypal page...")
       this.$router.push('/paypal')
     },
+    roundOff(num) {
+      console.log("Round off: ", num )
+    }
    
   },//end methods
 
