@@ -2,13 +2,13 @@
   <v-app>
     <v-app-bar app>
       <v-toolbar-title class="headline text-uppercase">
-        <span>HarlemBased Vendors</span>
+        <span>Sonya Enterprises</span>
         <span class="font-weight-light leftmargin" >VIRTUAL MALL</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn
         text
-        href="http://www.harlemjambo.com/"
+        href="http://sonyainc.net/wordpress"
         target="_blank"
       >
         <span class="mr-2">Latest News</span>
