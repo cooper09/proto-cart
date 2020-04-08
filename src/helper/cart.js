@@ -6,7 +6,7 @@ const Inventory = {
     1: {
       name: "Box of 50",
       price: 50.00,
-      image: 'masks.jpg'
+      image: 'http://harlembased.com/virtualmall/masks.jpg'
     },
     
   }//end Inventory
