@@ -1,8 +1,15 @@
 <template>
   <v-container   class="animated fadeIn container">
     Your Total is: ${{getTotal}}
-    <span class="right"><v-btn @click="showStore()">Back to Shop</v-btn></span>
-    <br/><br/>
+   
+      <v-card-actions class="right">
+            <v-btn color="primary"  @click="showStore()">
+                <v-icon>mdi-store </v-icon>
+                <span>Back to Store</span>
+            </v-btn>
+        </v-card-actions>
+    <br/><br/><br/>
+    
     <center><v-layout row wrap align-center align-content-space-between>  
 
        <v-row align="center" xs12>
