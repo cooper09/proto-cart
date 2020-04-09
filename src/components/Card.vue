@@ -12,18 +12,16 @@
         <v-card-text>
             <div class="subheading">{{this.product.title}}</div>
             <div class="grey--text">{{this.product.description}}</div>
-            <span class="right">Price: <b>${{this.product.price}}</b></span>
+            <span class="right price">Price: <b>${{this.product.price}}</b></span>
         </v-card-text>
         <v-card-actions>
-            <v-btn color="blue light" class="addBtn" @click="addToCart(product)">
-                <v-icon small left></v-icon>
+            <v-btn color="primary" class="addBtn" @click="addToCart(product)">
+                <v-icon>mdi-cart </v-icon>
                 <span>Add To Cart</span>
             </v-btn>
         </v-card-actions>
             <Basket />
     </v-card>
-
-
   </v-container>
 </template>
 
@@ -75,7 +73,9 @@ export default {
     cursor: pointer;
     float: right;
   }
-  .right {
-      float: right;
+
+  .price {
+    font-size: 1.25em;
   }
+
 </style>
