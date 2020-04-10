@@ -7,7 +7,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     selected: [],
-    total: 0,
+    total: 0.0,
     visible: true,
     cart: {},
     products: [
@@ -139,6 +139,7 @@ export default new Vuex.Store({
         category: 0,
         image: 'masks.jpg'
       }
+
     ],
     userInfo: {
       isLoggedIn: false,
@@ -156,7 +157,7 @@ export default new Vuex.Store({
   mutations: {
     setData(state,payload) {
       state.selected.push( payload);
-      state.total = state.total + parseInt(payload.price)
+      state.total = parseInt(payload.price)
       //console.log("store.setData: ", state.selected)
     },
     updateCart(state,payload) {
@@ -174,19 +175,19 @@ export default new Vuex.Store({
         total += cost
        
         console.log("Store.updateCart - total:  ", total );
-        alert("Store.updateCart - total:  "+ total)
+        //alert("Store.updateCart - total:  "+ total)
       }//end for loop
       state.total  = total;
     },
     setCart(state, payload ){
       state.cart = payload
       //console.log(`- ${product.name} x ${quantity} ${payload}`)
-      console.log("Store.setCart - payload: ", payload[0].cost)
+      console.log("Store.setCart - payload: ", payload[0].cost, " and current total: ", state.total)
 
-      state.total += parseFloat(payload[0].cost);
+      state.total = (payload[0].cost);
      
-      console.log("Store.updateCart -  state.total:  ", state.total );
-
+      console.log("Store.updateCart -  state.total:  ", state.total);
+      state.total.toPrecision(4)
     },
     hideMainView(state) {
       state.visible = false;
@@ -215,7 +216,11 @@ export default new Vuex.Store({
   },//end actions
   getters: {
     floatTotal: state => {
-     return  parseFloat(state.total);
+      console.log("getters.floatTotal - current total: ", state.total )
+      let ftotal = state.total
+      ftotal.toPrecision(3)
+     return  ftotal
     }
   },
 })
+
