@@ -1,7 +1,13 @@
 <template>
   <v-container   class="animated fadeIn container">
-    <span class="right"><v-btn @click="showStore()">Back to Shop</v-btn></span>
-  <br/></br>
+
+        <v-card-actions class="right">
+            <v-btn color="primary"  @click="showStore()">
+                <v-icon>mdi-store </v-icon>
+                <span>Back to Store</span>
+            </v-btn>
+        </v-card-actions>
+  <br/></br><br/>
   <div>
     <v-list enabled>
       <h3>Selected Items</h3>
@@ -24,7 +30,14 @@
               <v-text-field label="Quantity" dense counter-value :value="item.quantity" class="margins"></v-text-field>
             </v-list>
 
-            <span class="right"><v-btn @click="removeItem(item)">remove</v-btn></span>
+            <span class="right">
+
+                  <v-btn color="primary"  @click="removeItem(item)">
+                      <v-icon>mdi-trash-can </v-icon>
+                      <span>Remove Item</span>
+                  </v-btn>
+
+            </span>
         </v-list-item>
                 
       </v-list-item-group>
@@ -37,9 +50,14 @@
 
     <br/><br/>
    </div>
-   <div>Total: ${{total}} </div>
+   <div>Total: ${{floatTotal}} </div>
    <br/><br/>
-   <v-btn class="btn" @click="showPayPal()">Pay Now</v-btn>
+         <v-card-actions>
+            <v-btn color="primary"  @click="showPayPal()">
+                <v-icon>mdi-dollar-sign </v-icon>
+                <span>Pay Now</span>
+            </v-btn>
+        </v-card-actions>
    <br/><br/>
    <div ref="paypal"></div>
   </v-container>
@@ -58,6 +76,9 @@ export default {
     },
     newCart() {
       return this.$store.state.cart
+    },
+    floatTotal() {
+      return this.$store.getters.floatTotal
     }
   },
   data: () => ({
@@ -76,6 +97,9 @@ export default {
       console.log("Lets to the paypal page...")
       this.$router.push('/paypal')
     },
+    roundOff(num) {
+      console.log("Round off: ", num )
+    }
    
   },//end methods
 

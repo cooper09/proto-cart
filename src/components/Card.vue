@@ -7,19 +7,19 @@
         <v-responsive class="pt-4">
             
  <!-- <center><img src="https://via.placeholder.com/300" /></center> -->
-            <center><img src="masks.jpg" /></center>
+            <center><img src="http://harlembased.com/virtualmall/masks.jpg" /></center>
         </v-responsive>
         <v-card-text>
             <div class="subheading">{{this.product.title}}</div>
             <div class="grey--text">{{this.product.description}}</div>
-            <span class="right">Price: <b>${{this.product.price}}</b></span>
+            <span class="right price">Price: <b>${{this.product.price}}</b></span>
         </v-card-text>
         <v-card-actions>
-            <v-btn color="blue light" class="addBtn" @click="addToCart(product)">
-                <v-icon small left></v-icon>
+              <v-btn color="primary"  @click="addToCart(product)">
+                <v-icon>mdi-cart </v-icon>
                 <span>Add To Cart</span>
             </v-btn>
-        </v-card-actions>
+        </v-card-actions> 
             <Basket />
     </v-card>
 
@@ -65,6 +65,7 @@ export default {
         const ourCart = Cart.addItem(item.id, 1);
         console.log("Card.addToCart - our new cart: ", ourCart);
         this.$store.dispatch('setCart', ourCart );
+        alert("Item Added to Cart.")
     }
   },//end methods
 };//end export
@@ -75,7 +76,5 @@ export default {
     cursor: pointer;
     float: right;
   }
-  .right {
-      float: right;
-  }
+
 </style>

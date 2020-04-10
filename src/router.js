@@ -18,17 +18,20 @@ export default new Router({
     {
       path: '/basket',
       name: 'basket',
-      component: Basket
+      //component: Basket
+      component: () => import(/* webpackChunkName: "basket" */ './components/Basket.vue')
     },
     {
       path: '/checkout',
       name: 'checkout',
-      component: BasketCheckout
+      //component: BasketCheckout
+      component: () => import(/* webpackChunkName: "checkout" */ './components/BasketCheckout.vue')
     },
     {
       path: '/paypal',
       name: 'paypal',
-      component: PayPage
+      //component: PayPage
+      component: () => import(/* webpackChunkName: "paypal" */ './components/PayPage.vue')
     }
   ]
 })
