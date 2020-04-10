@@ -1,8 +1,13 @@
 <template>
   <v-container   class="animated fadeIn container">
-        <span class="right"><v-btn @click="showStore()">Back to Shop</v-btn></span>
+        <span class="right">
+            <v-btn color="primary"  @click="showStore()">
+                <v-icon>mdi-store </v-icon>
+                <span>Back to Store</span>
+            </v-btn>
+          </span>
     <v-list enabled>
-      <h3>Selected Items</h3>
+      <h3>Selected Items:</h3>
       <v-list-item-group v-model="newCart" color="primary">
         <v-list-item
           v-for="(item, i) in newCart"
@@ -22,7 +27,12 @@
               <v-text-field label="Quantity" dense counter-value :value="item.quantity" class="margins"></v-text-field>
             </v-list>
 
-            <span class="right"><v-btn @click="removeItem(item)">remove item</v-btn></span>
+            <span class="right">
+              <v-btn color="primary"  @click="removeItem(item)">
+                <v-icon>mdi-trash-can </v-icon>
+                <span>Remove Item</span>
+            </v-btn>
+            </span>
         </v-list-item>
                 
       </v-list-item-group>
@@ -274,7 +284,7 @@ export default {
                     orderId: data.orderID,
                     paymentId: data.paymentID,
                     payerId:data.payerID,
-                    items: this.getCartItems,
+                    items: this.newCart, //this.getCartItems,
                     amount:this.getTotal,
                     name: this.name,
                     address: this.address,
