@@ -4,9 +4,9 @@ const _ = require('lodash');
 
 const Inventory = {
     1: {
-      name: "Box of 50",
-      price: 50.00,
-      image: 'http://harlembased.com/virtualmall/masks.jpg'
+      name: "King's Golf Cap",
+      price: 19.99,
+      image: 'http://sonyainc.net/images/columbia-golf-cap.jpg'
     },
     
   }//end Inventory
@@ -15,18 +15,22 @@ const Inventory = {
 const Cart = new function () {
     this.items = {}
     this.cartObj = []
+    this.sold = false
 
     this.addItem = (id, qty) => {
         console.log("Cart.addItem: ", id , " qty: ", qty )
-        if(this.items[id]){
-          this.items[id] += qty      
-        }else{
-          this.items[id] = qty
-        }
-         const newCart = this.generateCartObject();
-         console.log("Cart.addItem - newCart=: " , newCart )
-         return newCart;
-      }
+            if  (this.sold !== true ) {
+            if(this.items[id]){
+            this.items[id] += qty      
+            }else{
+            this.items[id] = qty
+            }
+            const newCart = this.generateCartObject();
+            console.log("Cart.addItem - newCart=: " , newCart )
+            sold = true
+            return newCart;
+        }//end first iffy 
+      }//end additem
 
     this.removeItem = ( item) => {
         console.log("Cart.updateCart - Removing ", item.id  ," from Cart.");

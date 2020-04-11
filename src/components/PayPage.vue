@@ -165,7 +165,7 @@ export default {
   },
   computed: {
     getTotal () {
-        return this.$store.state.total;
+        return 19.99//this.$store.state.total;
     },
     newCart() {
       return this.$store.state.cart

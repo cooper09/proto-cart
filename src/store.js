@@ -13,9 +13,9 @@ export default new Vuex.Store({
     products: [
       {
         id: 1,
-        title: 'Box of 50',
-        description: 'Free Shipping',
-        price: 50.00,
+        title: 'Golf Cap of Kings',
+        description: 'On Sale Now!',
+        price: 19.99,
         ratings: 3,
         reviews: 5,
         isAddedToCart: false,
@@ -23,7 +23,7 @@ export default new Vuex.Store({
         isFavourite: false,
         quantity: 1,
         category: 0,
-        image: 'boxes.jpg'
+        image: 'http://sonyainc.net/images/columbia-golf-cap.jpg'
       }
     ],
     userInfo: {
@@ -72,7 +72,7 @@ export default new Vuex.Store({
       state.total = (payload[0].cost);
      
       console.log("Store.updateCart -  state.total:  ", state.total);
-      state.total.toPrecision(4)
+      state.total.toPrecision(4);
     },
     hideMainView(state) {
       state.visible = false;
@@ -104,7 +104,7 @@ export default new Vuex.Store({
       console.log("getters.floatTotal - current total: ", state.total )
       let ftotal = state.total
       ftotal.toPrecision(3)
-     return  ftotal
+     return  19.99 //ftotal
     }
   },
 })

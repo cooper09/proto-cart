@@ -7,15 +7,15 @@
         <v-responsive class="pt-4">
             
  <!-- <center><img src="https://via.placeholder.com/300" /></center> -->
-            <center><img src="boxes.jpg" /></center>
+            <center><img src="http://sonyainc.net/images/columbia-golf-cap.jpg" /></center>
         </v-responsive>
         <v-card-text>
-            <div class="subheading">{{this.product.title}}</div>
+            <h3>{{this.product.title}}</h3>
             <div class="grey--text">{{this.product.description}}</div>
             <span class="right price">Price: <b>${{this.product.price}}</b></span>
         </v-card-text>
         <v-card-actions>
-            <v-btn color="primary" class="addBtn" @click="addToCart(product)">
+            <v-btn color="primary" id="checkOutBtn" @click="addToCart(product)">
                 <v-icon>mdi-shopping-cart</v-icon>
                 <span>Add To Cart</span>
             </v-btn>
@@ -58,6 +58,7 @@ export default {
       alert("Selected Something")
     }, */
     addToCart(item){ 
+              alert("Your item has been added to the cart. Only one per customer!");
         //add to cart update state selected list with an action
         console.log ("Card.addToCart - Add ", item.id, " to the Cart")   
         this.$store.dispatch('setData', item );
@@ -66,6 +67,12 @@ export default {
         const ourCart = Cart.addItem(item.id, 1);
         console.log("Card.addToCart - our new cart: ", ourCart);
         this.$store.dispatch('setCart', ourCart );
+
+        //alert("Your item has been added to the cart. Only one per customer!");
+        console.log("Card.addToCart: checkout button" , document.getElementById('checkOutBtn') )
+        let checkout = documment.getElementById("checkOutBtn").style.visibility = "hidden";
+
+        //checkout.classList.add('hide')
     }
   },//end methods
 };//end export
@@ -81,5 +88,9 @@ export default {
   }
   .price {
     font-size: 1.2em;
+  }
+  .hide {
+    display: none;
+    background: blue;
   }
 </style>
