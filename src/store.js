@@ -13,9 +13,9 @@ export default new Vuex.Store({
     products: [
       {
         id: 1,
-        title: 'Product 1',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-        price: 0.01,
+        title: 'JJMD Disposable Face Masks',
+        description: 'Box of 50 on Sale Now\r\nOne per Custom',
+        price: 29.99,
         ratings: 3,
         reviews: 5,
         isAddedToCart: false,
@@ -23,123 +23,8 @@ export default new Vuex.Store({
         isFavourite: false,
         quantity: 1,
         category: 0,
-        image: 'masks.jpg'
-      },
-      {
-        id: 2,
-        title: 'Product 2',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-        price: 35,
-        ratings: 5,
-        reviews: 10,
-        isAddedToCart: false,
-        isAddedBtn: false,
-        isFavourite: false,
-        quantity: 1,
-        category: 0,
-        image: 'masks.jpg'
-      },
-      {
-        id: 3,
-        title: 'Product 3',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-        price: 110,
-        ratings: 2,
-        reviews: 3,
-        isAddedToCart: false,
-        isAddedBtn: false,
-        isFavourite: false,
-        quantity: 1,
-        category: 0,
-        image: 'masks.jpg'
-      },
-      {
-        id: 4,
-        title: 'Product 4',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-        price: 50,
-        ratings: 1,
-        reviews: 0,
-        isAddedToCart: false,
-        isAddedBtn: false,
-        isFavourite: false,
-        quantity: 1,
-        category: 0,
-        image: 'masks.jpg'
-      },
-      {
-        id: 5,
-        title: 'Product 5',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-        price: 35,
-        ratings: 4,
-        reviews: 2,
-        isAddedToCart: false,
-        isAddedBtn: false,
-        isFavourite: false,
-        quantity: 1,
-        category: 0,
-        image: 'masks.jpg'
-      },
-      {
-        id: 6,
-        title: 'Product 6',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-        price: 110,
-        ratings: 5,
-        reviews: 1,
-        isAddedToCart: false,
-        isAddedBtn: false,
-        isFavourite: false,
-        quantity: 1,
-        category: 0,
-        image: 'masks.jpg'
-      },
-      {
-        id: 7,
-        title: 'Product 7',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-        price: 50,
-        ratings: 5,
-        reviews: 7,
-        isAddedToCart: false,
-        isAddedBtn: false,
-        isFavourite: false,
-        quantity: 1,
-        category: 0,
-        image: 'masks.jpg',
-        category: 0,
-        image: 'masks.jpg'
-      },
-      {
-        id: 8,
-        title: 'Product 8',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-        price: 35,
-        ratings: 3,
-        reviews: 0,
-        isAddedToCart: false,
-        isAddedBtn: false,
-        isFavourite: false,
-        quantity: 1,
-        category: 0,
-        image: 'masks.jpg'
-      },
-      {
-        id: 9,
-        title: 'Product 9',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-        price: 110,
-        ratings: 4,
-        reviews: 2,
-        isAddedToCart: false,
-        isAddedBtn: false,
-        isFavourite: false,
-        quantity: 1,
-        category: 0,
-        image: 'masks.jpg'
+        image: 'http://sonyainc.net/images/single-box.jpg'
       }
-
     ],
     userInfo: {
       isLoggedIn: false,
@@ -187,7 +72,7 @@ export default new Vuex.Store({
       state.total = (payload[0].cost);
      
       console.log("Store.updateCart -  state.total:  ", state.total);
-      state.total.toPrecision(4)
+      state.total.toPrecision(4);
     },
     hideMainView(state) {
       state.visible = false;
@@ -219,7 +104,7 @@ export default new Vuex.Store({
       console.log("getters.floatTotal - current total: ", state.total )
       let ftotal = state.total
       ftotal.toPrecision(3)
-     return  ftotal
+     return  29.99 //ftotal
     }
   },
 })

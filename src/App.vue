@@ -8,7 +8,7 @@
       <v-spacer></v-spacer>
       <v-btn
         text
-        href="http://www.harlemjambo.com/"
+        href="https://www.harlemjambo.com/"
         target="_blank"
       >
         <span class="mr-2">Latest News</span>

@@ -4,68 +4,33 @@ const _ = require('lodash');
 
 const Inventory = {
     1: {
-      name: "Product 1",
-      price: 0.01,
-      image: 'http://harlembased.com/virtualmall/masks.jpg'
+      name: "JJDM Personal Face Masks",
+      price: 29.99,
+      image: 'http://sonyainc.net/images/single-box.jpg'
     },
-    2: {
-      name: "Product 2",
-      price: 35,
-      image: 'http://harlembased.com/virtualmall/masks.jpg'
-    },
-    3: {
-      name: "Product 3",
-      price: 110,
-      image: 'http://harlembased.com/virtualmall/masks.jpg'
-    },
-    4: {
-      name: "Product 4",
-      price: 50,
-      image: 'http://harlembased.com/virtualmall/masks.jpg'
-    },
-    5: {
-      name: "Product 5",
-      price: 35,
-      image: 'http://harlembased.com/virtualmall/masks.jpg'
-    },
-    6: {
-      name: "Product 6",
-      price: 110,
-      image: 'http://harlembased.com/virtualmall/masks.jpg'
-    },
-    7: {
-      name: "Product 7",
-      price: 50,
-      image: 'http://harlembased.com/virtualmall/masks.jpg'
-    },
-    8: {
-      name: "Product 8",
-      price: 35,
-      image: 'masks.jpg'
-    },
-    9: {
-      name: "Product 9",
-      price: 110,
-      image: 'http://harlembased.com/virtualmall/masks.jpg'
-    }
+    
   }//end Inventory
   
 
 const Cart = new function () {
     this.items = {}
     this.cartObj = []
+    this.sold = false
 
     this.addItem = (id, qty) => {
         console.log("Cart.addItem: ", id , " qty: ", qty )
-        if(this.items[id]){
-          this.items[id] += qty      
-        }else{
-          this.items[id] = qty
-        }
-         const newCart = this.generateCartObject();
-         console.log("Cart.addItem - newCart=: " , newCart )
-         return newCart;
-      }
+            if  (this.sold !== true ) {
+            if(this.items[id]){
+            this.items[id] += qty      
+            }else{
+            this.items[id] = qty
+            }
+            const newCart = this.generateCartObject();
+            console.log("Cart.addItem - newCart=: " , newCart )
+            sold = true
+            return newCart;
+        }//end first iffy 
+      }//end additem
 
     this.removeItem = ( item) => {
         console.log("Cart.updateCart - Removing ", item.id  ," from Cart.");

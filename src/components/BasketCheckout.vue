@@ -11,6 +11,8 @@
   <div>
     <v-list enabled>
       <h3>Selected Items</h3>
+      <p><b>JJMD Disposable Face Masks</b></p>
+      <p>Box of 50</p>
       <v-list-item-group v-model="newCart" color="primary">
         <v-list-item
           v-for="(item, i) in newCart"
