@@ -93,4 +93,11 @@ export default {
     display: none;
     background: blue;
   }
+  .price {
+    font-size: 1.2em;
+  }
+  .hide {
+    display: none;
+    background: blue;
+  }
 </style>
