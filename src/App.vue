@@ -2,13 +2,13 @@
   <v-app>
     <v-app-bar app>
       <v-toolbar-title class="headline text-uppercase">
-        <span>HarlemBased Vendors</span>
+        <span>TyrionHT</span>
         <span class="font-weight-light leftmargin" >VIRTUAL MALL</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn
         text
-        href="https://www.harlemjambo.com/"
+        href="https://wpeasycontent.com/"
         target="_blank"
       >
         <span class="mr-2">Latest News</span>

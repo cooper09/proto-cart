@@ -24,8 +24,6 @@
         
             <Basket />
     </v-card>
-
-
   </v-container>
 </template>
 
@@ -84,8 +82,16 @@ export default {
     cursor: pointer;
     float: right;
   }
-  .right {
-      float: right;
+
+  .price {
+    font-size: 1.25em;
+  }
+  .price {
+    font-size: 1.2em;
+  }
+  .hide {
+    display: none;
+    background: blue;
   }
   .price {
     font-size: 1.2em;
