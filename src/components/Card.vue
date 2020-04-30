@@ -1,3 +1,4 @@
+
 <template>
 
   <v-container class="animated fadeIn">
@@ -50,14 +51,18 @@ export default {
     nextPage() {
       alert("next page please")
       this.$router.push('/about')
-      let hello = "We shall Overcome"
+      //let hello = "We shall Overcome"
 
     },
 /*    selected() {
       alert("Selected Something")
     }, */
     addToCart(item){ 
-              alert("Your item has been added to the cart. Only one per customer!\n\nPlease proceed to Checkout");
+        alert("Your item has been added to the cart. Only one per customer!\n\nPlease proceed to Checkout");
+        
+        fbq('trackCustom', ' Submitted - Add To Cart ');
+        gtag('event',  'Submitted - Add To Cart ');
+
         //add to cart update state selected list with an action
         console.log ("Card.addToCart - Add ", item.id, " to the Cart")   
         this.$store.dispatch('setData', item );
@@ -70,6 +75,7 @@ export default {
         //alert("Your item has been added to the cart. Only one per customer!");
         console.log("Card.addToCart: checkout button" , document.getElementById('checkOutBtn') )
         let checkout = documment.getElementById("checkOutBtn").style.visibility = "hidden";
+
 
         //checkout.classList.add('hide')
     }

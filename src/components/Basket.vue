@@ -11,6 +11,8 @@ export default {
   }),
   methods: {
     nextPage() {
+      fbq('trackCustom', ' Submitted - Go To Checkout ');
+      gtag('event', 'click', 'Submitted - Go To Checkout');
       this.$router.push('/checkout')
       this.$store.dispatch('hideMainView')
     }

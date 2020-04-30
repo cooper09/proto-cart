@@ -97,6 +97,8 @@ export default {
     },
     showPayPal(){
       console.log("Lets to the paypal page...")
+      fbq('trackCustom', ' Submitted - Pay Now ');
+      
       this.$router.push('/paypal')
     },
     roundOff(num) {
