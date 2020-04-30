@@ -1,15 +1,45 @@
 <template>
   <v-container   class="animated fadeIn container">
-    Your Total is: ${{getTotal}}
-   
-      <v-card-actions class="right">
+        <span class="right">
             <v-btn color="primary"  @click="showStore()">
                 <v-icon>mdi-store </v-icon>
                 <span>Back to Store</span>
             </v-btn>
-        </v-card-actions>
-    <br/><br/><br/>
-    
+          </span>
+    <v-list enabled>
+      <h3>Selected Items:</h3>
+      <v-list-item-group v-model="newCart" color="primary">
+        <v-list-item
+          v-for="(item, i) in newCart"
+          :key="i"
+          class=""
+        >
+          <v-list-item-avatar class="margins">
+            <img :src='item.product.image' width="24" height="24" >
+          </v-list-item-avatar>
+          <v-list-item-content>
+            <v-list>
+             {{item.product.name}} <span class="left">price: ${{item.product.price}}</span>
+            </v-list>
+          </v-list-item-content>
+
+            <v-list>
+              <v-text-field label="Quantity" dense counter-value :value="item.quantity" class="margins"></v-text-field>
+            </v-list>
+
+            <span class="right">
+              <v-btn color="primary"  @click="removeItem(item)">
+                <v-icon>mdi-trash-can </v-icon>
+                <span>Remove Item</span>
+            </v-btn>
+            </span>
+        </v-list-item>
+                
+      </v-list-item-group>
+                  
+    </v-list>
+    Your Total is: ${{getTotal}}
+    <br/><br/>
     <center><v-layout row wrap align-center align-content-space-between>  
 
        <v-row align="center" xs12>
@@ -135,7 +165,13 @@ export default {
   },
   computed: {
     getTotal () {
-        return this.$store.state.total;
+        return 29.99//this.$store.state.total;
+    },
+    newCart() {
+      return this.$store.state.cart
+    },
+    newCart() {
+      return this.$store.state.cart
     },
   },//end computed
   
@@ -200,6 +236,10 @@ export default {
     showStore() {
       this.$store.dispatch('showMainView')
     },
+    removeItem(item) {
+      console.log("Remove following Item from cart: ", item);
+      this.$store.dispatch('updateCart', item);
+    },
     payMethod() {
       const script = document.createElement('script');
       //cooper -  This the "sandbox account"
@@ -247,7 +287,7 @@ export default {
                     orderId: data.orderID,
                     paymentId: data.paymentID,
                     payerId:data.payerID,
-                    items: this.getCartItems,
+                    items: this.newCart, //this.getCartItems,
                     amount:this.getTotal,
                     name: this.name,
                     address: this.address,
@@ -280,7 +320,7 @@ export default {
       .render(this.$refs.paypal )
     },//setLoaded
     validate () {
-        if (this.$refs.form.validate()) {
+        if (this.$refs.form.validate()){
           this.snackbar = true;
           //alert("Send data to database - selected:  "+ this.select );
           const dataObj = {
@@ -294,7 +334,14 @@ export default {
               email: this.email
           }//end dataObj
           //this.$refs.form.reset();
-          this.payMethod()
+          console.log ("Validate - current total: ", this.getTotal);
+          if (this.getTotal !== 0 ) {
+            this.payMethod()
+          } else {
+            alert("You cannot purchase if your total is $0. Please add items to your cart.");
+            this.$refs.form.reset(); 
+            this.$store.dispatch('showMainView')
+          }
         }
       },
       reset () {
