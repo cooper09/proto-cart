@@ -27,7 +27,7 @@ const Cart = new function () {
             }
             const newCart = this.generateCartObject();
             console.log("Cart.addItem - newCart=: " , newCart )
-            sold = true
+            this.sold = true
             return newCart;
         }//end first iffy 
       }//end additem
