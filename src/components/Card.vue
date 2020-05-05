@@ -8,7 +8,7 @@
         <v-responsive class="pt-4">
             
  <!-- <center><img src="https://via.placeholder.com/300" /></center> -->
-            <center><v-img src="http://sonyainc.net/images/single-box.jpg" aspect-ratio="1.7"  id="bgImg"></v-img></center>
+            <center><v-img src="http://sonyainc.net/images/single-box.jpg" aspect-ratio="1."  id="bgImg"></v-img></center>
         
         </v-responsive>
         <v-card-text>
