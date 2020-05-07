@@ -13,7 +13,11 @@
         </v-responsive>
         <v-card-text>
             <h3>{{this.product.title}}</h3>
-            <div class="grey--text">{{this.product.description}}</div>
+            <div class="grey--text"><b>{{this.product.description1}}</b></div>
+                    <br/>
+            <div class="grey--text">{{this.product.description2}}</div>
+            <div class="grey--text">{{this.product.description3}}</div>
+            <div class="grey--text">{{this.product.description4}}</div>
             <span class="right price">Price: <b>${{this.product.price}}</b></span>
         </v-card-text>
         <v-card-actions>
