@@ -54,6 +54,8 @@
    </div>
    <div>Total: ${{floatTotal}} </div>
    <br/><br/>
+      <img src="paypal.jpg" />
+     
          <v-card-actions>
             <v-btn color="primary"  @click="showPayPal()">
                 <v-icon>mdi-dollar-sign </v-icon>
@@ -97,8 +99,7 @@ export default {
     },
     showPayPal(){
       console.log("Lets to the paypal page...")
-      fbq('trackCustom', ' Submitted - Pay Now ');
-      gtag('event', ' Submitted - Pay Now ');
+
       this.$router.push('/paypal')
     },
     roundOff(num) {

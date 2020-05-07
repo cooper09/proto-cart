@@ -313,8 +313,7 @@ export default {
                     }); 
 
               this.$refs.form.reset();
-              fbq('trackCustom', ' Submitted - PayPal Transaction Complete');
-              gtag('event', 'Submitted - PayPal Transaction Complete');
+
               alert("Thank you. Your Purchase has been completed and your shipment is on its way!")
               
         }// on Approval

@@ -59,9 +59,6 @@ export default {
     }, */
     addToCart(item){ 
         alert("Your item has been added to the cart. Only one per customer!\n\nPlease proceed to Checkout");
-        
-        fbq('trackCustom', ' Submitted - Add To Cart ');
-        gtag('event',  'Submitted - Add To Cart ');
 
         //add to cart update state selected list with an action
         console.log ("Card.addToCart - Add ", item.id, " to the Cart")   
