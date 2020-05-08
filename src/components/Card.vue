@@ -32,7 +32,7 @@ import Basket from '@/components/Basket';
 import Cart from '@/helper/cart'
 
 export default {
-      created() {
+      mounted() {
       console.log('Component has been created: ', this.product );
 
     //add to cart update state selected list with an action
