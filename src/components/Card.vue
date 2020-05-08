@@ -20,12 +20,7 @@
             <div class="grey--text">{{this.product.description4}}</div>
             <span class="right price">Price: <b>${{this.product.price}}</b></span>
         </v-card-text>
-        <v-card-actions>
-            <v-btn color="primary" id="checkOutBtn" @click="addToCart(product)">
-                <v-icon>mdi-shopping-cart</v-icon>
-                <span>Add To Cart</span>
-            </v-btn>
-        </v-card-actions>
+
         
             <Basket />
     </v-card>
@@ -37,6 +32,24 @@ import Basket from '@/components/Basket';
 import Cart from '@/helper/cart'
 
 export default {
+    created() {
+      console.log('Component has been created: ', this.product );
+
+    //add to cart update state selected list with an action
+        console.log ("Card.addToCart - Add ", this.product.id, " to the Cart")   
+        this.$store.dispatch('setData', this.product );
+        console.log("addToCart id: ", typeof(this.product.id))
+
+        const ourCart = Cart.addItem(this.product.id, 1);
+        console.log("Card.addToCart - our new cart: ", ourCart);
+        this.$store.dispatch('setCart', ourCart );
+
+        //alert("Your item has been added to the cart. Only one per customer!");
+        console.log("Card.addToCart: checkout button" , document.getElementById('checkOutBtn') )
+        let checkout = documment.getElementById("checkOutBtn").style.visibility = "hidden";
+
+
+    },//end ctreated HOOK
     components: {
        Basket 
     },
