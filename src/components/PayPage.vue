@@ -40,6 +40,10 @@
     </v-list>
     Your Total is: ${{getTotal}}
     <br/><br/>
+    <v-row>To make sure your item gets to as soon as possible, just fill out the following form and submit.
+      <p>Thank you.</p>
+    </v-row>
+    <br/>
     <center><v-layout row wrap align-center align-content-space-between>  
 
        <v-row align="center" xs12>

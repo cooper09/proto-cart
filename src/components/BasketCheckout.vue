@@ -7,7 +7,7 @@
                 <span>Back to Store</span>
             </v-btn>
         </v-card-actions>
-  <br/></br><br/>
+  <br/><br/><br/>
   <div>
     <v-list enabled>
       <h3>Selected Items</h3>

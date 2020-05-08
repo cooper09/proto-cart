@@ -1,6 +1,6 @@
 <template>
   <v-container   class="animated fadeIn container">
-    <v-btn @click="nextPage()">Checkout</v-btn>
+    <v-btn @click="nextPage()" color="primary">Checkout</v-btn>
   </v-container>
 </template>
 
