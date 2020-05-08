@@ -21,7 +21,7 @@
             <span class="right price">Price: <b>${{this.product.price}}</b></span>
         </v-card-text>
 
-        
+        <br/><br/>
             <Basket />
     </v-card>
   </v-container>

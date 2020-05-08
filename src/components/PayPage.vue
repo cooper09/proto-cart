@@ -154,7 +154,7 @@
         <div v-if="paidFor">
             <h3>Thanx for Shopping with HarlemBased Vendors. Stay Live!</h3>
           </div>
-    <br/><br/>
+
     <hr />
 
   </v-container>
