@@ -11,8 +11,14 @@ export default {
   }),
   methods: {
     nextPage() {
-      fbq('trackCustom', ' Submitted - Go To Checkout ');
-      gtag('event', 'click', 'Submitted - Go To Checkout');
+      fbq('trackCustom', 'Sonya - Submitted - Go To Checkout ');
+      //gtag('event', 'click', 'Sonya - Submitted - Go To Checkout');
+      gtag('event', 'Sonya Event', {
+          'event_action': 'Sonya - Submitted - Go To Checkout',
+          'event_category': "Sonya - Event",
+          'event_label': 'Sonya - Submitted - Go To Checkout'
+        });
+      
       this.$router.push('/checkout')
       this.$store.dispatch('hideMainView')
     }

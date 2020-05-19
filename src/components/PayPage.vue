@@ -317,8 +317,13 @@ export default {
                     }); 
 
               this.$refs.form.reset();
-              fbq('trackCustom', ' Submitted - PayPal Transaction Complete');
-              gtag('event', 'Submitted - PayPal Transaction Complete');
+              fbq('trackCustom', 'Sonya - Submitted - PayPal Transaction Complete');
+              //gtag('event', 'Sonya - Submitted - PayPal Transaction Complete');
+              gtag('event', 'Sonya Event', {
+                'event_action': 'Sonya - Submitted - PayPal Transaction Complete',
+                'event_category': "Sonya - Event",
+                'event_label': 'Sonya - Submitted - PayPal Transaction Complete'
+              });
               alert("Thank you. Your Purchase has been completed and your shipment is on its way!")
               
         }// on Approval
@@ -327,8 +332,8 @@ export default {
     },//setLoaded
     validate () {
         if (this.$refs.form.validate()){
-          fbq('trackCustom', ' Form Submitted and validated ');
-          gtag('event', 'Form Submitted and validated ');
+          fbq('trackCustom', 'Sonya -  Form Submitted and validated ');
+          gtag('event', 'Sonya - Form Submitted and validated ');
           this.snackbar = true;
           //alert("Send data to database - selected:  "+ this.select );
           const dataObj = {

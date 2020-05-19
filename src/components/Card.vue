@@ -8,7 +8,7 @@
         <v-responsive class="pt-4">
             
  <!-- <center><img src="https://via.placeholder.com/300" /></center> -->
-            <center><v-img src="http://sonyainc.net/images/single-box.jpg" aspect-ratio="1.9"  id="bgImg"></v-img></center>
+            <center><v-img src="http://sonyainc.net/images/single-item.png" aspect-ratio="1.0"  id="bgImg"></v-img></center>
         
         </v-responsive>
         <v-card-text>
@@ -76,8 +76,13 @@ export default {
     addToCart(item){ 
         alert("Your item has been added to the cart. Only one per customer!\n\nPlease proceed to Checkout");
         
-        fbq('trackCustom', ' Submitted - Add To Cart ');
-        gtag('event',  'Submitted - Add To Cart ');
+        fbq('trackCustom', 'Sonya - Submitted - Add To Cart ');
+        //gtag('event',  'Sonya - Submitted - Add To Cart ');
+        gtag('event', 'Sonya Event', {
+          'event_action': 'Sonya - Submitted - Add To Cart ',
+          'event_category': "Sonya - Event",
+          'event_label': 'Sonya - Submitted - Add To Cart '
+        });
 
         //add to cart update state selected list with an action
         console.log ("Card.addToCart - Add ", item.id, " to the Cart")   

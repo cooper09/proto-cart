@@ -100,8 +100,14 @@ export default {
     },
     showPayPal(){
       console.log("Lets to the paypal page...")
-      fbq('trackCustom', ' Submitted - Pay Now ');
-      gtag('event', ' Submitted - Pay Now ');
+      fbq('trackCustom', 'Sonya - Submitted - Pay Now ');
+      //gtag('event', 'Sonya - Submitted - Pay Now ');
+      gtag('event', 'Sonya Event', {
+          'event_action': 'Sonya - Submitted - Pay Now',
+          'event_category': "Sonya - Event",
+          'event_label': 'Sonya - Submitted - Pay Now'
+        });
+
       this.$router.push('/paypal')
     },
     roundOff(num) {
