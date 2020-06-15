@@ -5,7 +5,7 @@ const _ = require('lodash');
 const Inventory = {
     1: {
       name: "JJDM Personal Face Masks",
-      price: 29.99,
+      price: "$$",
       image: 'http://sonyainc.net/images/single-box.jpg'
     },
     

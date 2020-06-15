@@ -7,12 +7,13 @@
                 <span>Back to Store</span>
             </v-btn>
         </v-card-actions>
-  <br/></br><br/>
+  <br/><br/>
   <div>
     <v-list enabled>
       <h3>Selected Items</h3>
-      <p><b>JJMD Disposable Face Masks</b></p>
-      <p>Box of 50</p>
+      <p><b>{{selectedItem[0].title}}</b></p>
+      <p>{{selectedItem[0].description1}}</p>
+      <p>NewCart: {{newCart}}</p>
       <v-list-item-group v-model="newCart" color="primary">
         <v-list-item
           v-for="(item, i) in newCart"
@@ -20,16 +21,16 @@
           class=""
         >
           <v-list-item-avatar class="margins">
-            <img :src='item.product.image' width="24" height="24" >
+            <v-img :src='selectedItem[0].image' width="24" height="24" ></v-img>
           </v-list-item-avatar>
           <v-list-item-content>
             <v-list>
-             {{item.product.name}} <span class="left">price: ${{item.product.price}}</span>
+             {{selectedItem[0].title}} <span class="left">price: ${{selectedItem[0].price}}</span>
             </v-list>
           </v-list-item-content>
 
             <v-list>
-              <v-text-field label="Quantity" dense counter-value :value="item.quantity" class="margins"></v-text-field>
+              <v-text-field label="Quantity" dense counter-value :value="selectedItem[0].quantity" class="margins"></v-text-field>
             </v-list>
 
             <span class="right">

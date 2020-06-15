@@ -165,7 +165,7 @@ export default {
   },
   computed: {
     getTotal () {
-        return 29.99//this.$store.state.total;
+        return this.$store.state.total;
     },
     newCart() {
       return this.$store.state.cart
@@ -322,8 +322,9 @@ export default {
     },//setLoaded
     validate () {
         if (this.$refs.form.validate()){
-          fbq('trackCustom', ' Form Submitted and validated ');
-          gtag('event', 'Form Submitted and validated ');
+          alert("Capture event for both FG and GA")
+        //  fbq('trackCustom', ' Form Submitted and validated ');
+        //  gtag('event', 'Form Submitted and validated ');
           this.snackbar = true;
           //alert("Send data to database - selected:  "+ this.select );
           const dataObj = {

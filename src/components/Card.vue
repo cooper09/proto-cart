@@ -7,8 +7,8 @@
     <v-card class="pa-1">
         <v-responsive class="pt-4">
             
- <!-- <center><img src="https://via.placeholder.com/300" /></center> -->
-            <center><v-img src="http://sonyainc.net/images/single-item.png" aspect-ratio="1.0"  id="bgImg"></v-img></center>
+ <center><img src="https://via.placeholder.com/300" /></center>
+       <!--   <center><v-img src="http://sonyainc.net/images/don-draper.jpg" aspect-ratio="1.0"  id="bgImg"></v-img></center> -->
         
         </v-responsive>
         <v-card-text>

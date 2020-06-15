@@ -13,12 +13,12 @@ export default new Vuex.Store({
     products: [
       {
         id: 1,
-        title: 'JJMD Disposable Face Masks',
-        description1: 'Box of 50 on Sale Now\r\nOne per Custom',
-        description2: 'Use of durable and effective antibacterial and antiviral materiels',
-        description3: 'Effective filtration of dust particles',
-        description4: '3 layer protection  BFE95%-99%',
-        price: 29.99,
+        title: 'Generic Item',
+        description1: 'Buy Now\r\n\n Pay Later',
+        description2: 'Happiness in a bottle',
+        description3: 'Can do no wrong',
+        description4: 'Buy Buy and dont ask why!',
+        price: 99.99,
         ratings: 3,
         reviews: 5,
         isAddedToCart: false,
@@ -26,7 +26,7 @@ export default new Vuex.Store({
         isFavourite: false,
         quantity: 1,
         category: 0,
-        image: 'http://sonyainc.net/images/single-box.jpg'
+        image: 'http://sonyainc.net/images/don-draper.jpg'
       }
     ],
     userInfo: {
@@ -46,7 +46,7 @@ export default new Vuex.Store({
     setData(state,payload) {
       state.selected.push( payload);
       state.total = parseInt(payload.price)
-      //console.log("store.setData: ", state.selected)
+      console.log("store.setData: ", state.total)
     },
     updateCart(state,payload) {
       console.log("update selected: ", payload.title );
@@ -107,7 +107,7 @@ export default new Vuex.Store({
       console.log("getters.floatTotal - current total: ", state.total )
       let ftotal = state.total
       ftotal.toPrecision(3)
-     return  29.99 //ftotal
+     return ftotal
     }
   },
 })
