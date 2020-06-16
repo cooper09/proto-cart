@@ -5,7 +5,7 @@ const _ = require('lodash');
 const Inventory = {
     1: {
       name: "JJDM Personal Face Masks",
-      price: "$$",
+      price: 0.1,
       image: 'http://sonyainc.net/images/single-box.jpg'
     },
     
@@ -17,15 +17,15 @@ const Cart = new function () {
     this.cartObj = []
     this.sold = false
 
-    this.addItem = (id, qty) => {
-        console.log("Cart.addItem: ", id , " qty: ", qty )
+    this.addItem = (id, price, qty) => {
+        console.log("Cart.addItem: ", id ," price: ", price, " qty: ", qty )
             if  (this.sold !== true ) {
             if(this.items[id]){
             this.items[id] += qty      
             }else{
             this.items[id] = qty
             }
-            const newCart = this.generateCartObject();
+            const newCart = this.generateCartObject(price);
             console.log("Cart.addItem - newCart=: " , newCart )
             this.sold = true
             return newCart;
@@ -58,8 +58,8 @@ const Cart = new function () {
       }//end displayCart
 
 // cooper s - always keep our cart objects rip-roaring and ready to go....
-    this.generateCartObject = () => {
-        console.log("GenerateCartObject - items: ", this.items )
+    this.generateCartObject = (price) => {
+        console.log("GenerateCartObject - items: ", this.items, " price: ", price  )
         this.cartObj = []
         if (!_.isEmpty(this.items )) {
             let ids = Object.keys(this.items);
@@ -69,9 +69,9 @@ const Cart = new function () {
                 let product = Inventory[productIdx]
                 let id = parseInt(ids[i])
                 console.log("chosen product: ", ids[i] );
-                console.log("chosen product price: ", product.price );
+                console.log("chosen product price: ", price );
                 if(quantity>0){
-                    let cost = quantity * product.price
+                    let cost = quantity * price
                     let item = { id, quantity, product, cost }
                     console.log("generateCartObject - final item: ", item )         
                     this.cartObj.push(item)

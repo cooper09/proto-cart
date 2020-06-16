@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title>TyrionHT Mall</title>
+    <title>Generic Mall</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
@@ -16,12 +16,12 @@
     
     <!-- All our high end tracking equipment -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXX-X"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-169409092-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'UA-XXXXXXXX-X', {
+      gtag('config', 'UA-169409092-1', {
         'page_title' : 'Virtual Cart - Start'
       });
 
@@ -39,16 +39,21 @@
       'https://connect.facebook.net/en_US/fbevents.js');
      
      // cooper s - add your facebook pixel id here...
-      //fbq('init', 'XXXX');
+      fbq('init', '901746067007826');
+
+      fbq('trackCustom', 'Generic Form has Loaded');
+      gtag('event', 'Generic Form has Loaded', {
+        event_category: "Generic",
+        event_label : "Generic Page Load"
+      });
 
     //cooper s - be sure to remember to turn these back...
     var timestamp = new Date();//toLocaleString();
 
-    
       </script>
       <!-- cooper s  -  remember to upate the FB pixel as well -->
     <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1234567890&ev=PageView&noscript=1"
+      src="https://www.facebook.com/tr?id=9017460670078260&ev=PageView&noscript=1"
     /></noscript>
 
     <style>

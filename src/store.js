@@ -61,7 +61,6 @@ export default new Vuex.Store({
         let {quantity, product, cost} = entry
         console.log(`- ${product.name} x ${quantity} ${cost}`)
         total += cost
-       
         console.log("Store.updateCart - total:  ", total );
         //alert("Store.updateCart - total:  "+ total)
       }//end for loop
@@ -100,6 +99,9 @@ export default new Vuex.Store({
     },
     setCart(context, data ) {
       context.commit('setCart', data);
+    },
+    hideBasket(state){
+      console.log("Hide The Shopping Basket")
     }
   },//end actions
   getters: {

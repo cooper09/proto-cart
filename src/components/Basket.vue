@@ -1,6 +1,6 @@
 <template>
   <v-container   class="animated fadeIn container">
-    <v-btn @click="nextPage()">Checkout</v-btn>
+    <v-btn color="primary" @click="nextPage()">Checkout</v-btn>
   </v-container>
 </template>
 
@@ -11,6 +11,12 @@ export default {
   }),
   methods: {
     nextPage() {
+
+      fbq('trackCustom', 'Checkout Button Submitted');
+      gtag('event', 'Checkout Button Submitted', {
+        event_category: "Generic",
+        event_label : "Generic Checkout"
+      });
 
       this.$router.push('/checkout')
       this.$store.dispatch('hideMainView')

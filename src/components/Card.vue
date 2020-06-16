@@ -40,7 +40,7 @@ export default {
         this.$store.dispatch('setData', this.product );
         console.log("addToCart id: ", typeof(this.product.id))
 
-        const ourCart = Cart.addItem(this.product.id, 1);
+        const ourCart = Cart.addItem(this.product.id, this.product.price, 1);
         console.log("Card.addToCart - our new cart: ", ourCart);
         this.$store.dispatch('setCart', ourCart );
 

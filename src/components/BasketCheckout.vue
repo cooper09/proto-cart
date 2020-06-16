@@ -4,7 +4,7 @@
         <v-card-actions class="right">
             <v-btn color="primary"  @click="showStore()">
                 <v-icon>mdi-store </v-icon>
-                <span>Back to Store</span>
+                <span>Show Cart</span>
             </v-btn>
         </v-card-actions>
   <br/><br/>
@@ -13,7 +13,7 @@
       <h3>Selected Items</h3>
       <p><b>{{selectedItem[0].title}}</b></p>
       <p>{{selectedItem[0].description1}}</p>
-      <p>NewCart: {{newCart}}</p>
+
       <v-list-item-group v-model="newCart" color="primary">
         <v-list-item
           v-for="(item, i) in newCart"
@@ -35,10 +35,10 @@
 
             <span class="right">
 
-                  <v-btn color="primary"  @click="removeItem(item)">
+              <!--    <v-btn color="primary"  @click="removeItem(item)">
                       <v-icon>mdi-trash-can </v-icon>
                       <span>Remove Item</span>
-                  </v-btn>
+                  </v-btn> -->
 
             </span>
         </v-list-item>
@@ -51,11 +51,11 @@
         <hr />
   </div>
 
-    <br/><br/>
-   </div>
+    <br/><br/>     
+            
    <div>Total: ${{floatTotal}} </div>
    <br/><br/>
-      <img src="paypal.jpg" />
+      <img src="http://sonyainc.net/images/paypal.jpg" />
      
          <v-card-actions>
             <v-btn color="primary"  @click="showPayPal()">
@@ -96,7 +96,13 @@ export default {
     },
     showStore() {
       //this.$router.push('/')
-      this.$store.dispatch('showMainView')
+      fbq('trackCustom', 'Back to Store Button Submitted');
+      gtag('event', 'Back to Store Submitted', {
+        event_category: "Generic",
+        event_label : "Generic Back To Store"
+      });
+      this.$store.dispatch('showMainView');
+      this.$store.dispatch('hideBasket')
     },
     showPayPal(){
       console.log("Lets to the paypal page...")
