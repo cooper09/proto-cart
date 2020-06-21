@@ -2,17 +2,17 @@
   <v-app>
     <v-app-bar app>
       <v-toolbar-title class="headline text-uppercase">
-        <span>Generic</span>
+        <span>Gually Goods</span>
         <span class="font-weight-light leftmargin" >VIRTUAL MALL</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn
+ <!--     <v-btn
         text
         href=""
         target="_blank"
-      >
+      > 
         <span class="mr-2">Link to Something Interesting</span>
-      </v-btn>
+      </v-btn> -->
     </v-app-bar>
     <v-content   class="animated fadeIn">
       <p v-if="isVisible"><MainView /></p>

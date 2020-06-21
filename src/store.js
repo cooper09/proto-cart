@@ -13,12 +13,12 @@ export default new Vuex.Store({
     products: [
       {
         id: 1,
-        title: 'Generic Item',
-        description1: 'Buy Now\r\n\n Pay Later',
-        description2: 'Happiness in a bottle',
-        description3: 'Can do no wrong',
-        description4: 'Buy Buy and dont ask why!',
-        price: 99.99,
+        title: 'Nohon Elbow Data Cable',
+        description1: '90 Degree USB Data Charger Fast Cable for iPhone ',
+        description2: '90 degree elbow is durable',
+        description3: 'Simple and innovative design',
+        description4: 'Fast charging, no battery damage',
+        price: 7.99,
         ratings: 3,
         reviews: 5,
         isAddedToCart: false,
@@ -26,7 +26,7 @@ export default new Vuex.Store({
         isFavourite: false,
         quantity: 1,
         category: 0,
-        image: 'http://sonyainc.net/images/don-draper.jpg'
+        image: 'http://sonyainc.net/images/Nohon-USB-cable-1.jpg'
       }
     ],
     userInfo: {
@@ -45,7 +45,7 @@ export default new Vuex.Store({
   mutations: {
     setData(state,payload) {
       state.selected.push( payload);
-      state.total = parseInt(payload.price)
+      state.total = payload.price;
       console.log("store.setData: ", state.total)
     },
     updateCart(state,payload) {
