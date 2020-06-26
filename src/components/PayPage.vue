@@ -323,8 +323,8 @@ export default {
     validate () {
         if (this.$refs.form.validate()){
           //alert("Capture event for both FG and GA")
-          fbq('trackCustom', ' Form Submitted and validated ');
-          gtag('event', 'Form Submitted and validated ');
+          fbq('trackCustom', 'Nohon - Form Submitted and validated ');
+          gtag('event', 'Nohon - Form Submitted and validated ');
           this.snackbar = true;
           //alert("Send data to database - selected:  "+ this.select );
           const dataObj = {

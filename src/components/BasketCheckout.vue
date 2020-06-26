@@ -97,9 +97,9 @@ export default {
     showStore() {
       //this.$router.push('/')
       fbq('trackCustom', 'Back to Store Button Submitted');
-      gtag('event', 'Back to Store Submitted', {
-        event_category: "Generic",
-        event_label : "Generic Back To Store"
+      gtag('event', 'Nohon - Back to Store Submitted', {
+        event_category: "Nohon",
+        event_label : "Nohon Back To Store"
       });
       this.$store.dispatch('showMainView');
       this.$store.dispatch('hideBasket')
