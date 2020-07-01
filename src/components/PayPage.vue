@@ -302,8 +302,20 @@ export default {
 
                 console.log("PayPage sending data: ",  infoObj, " to database ");
                   const url = `https://sleepy-everglades-99189.herokuapp.com/beatcart`;
+                  const mail_url = `https://sleepy-everglades-99189.herokuapp.com/nodemail`;
 
+// post the final paypal order 
                   axios.post(url,infoObj)
+                    .then(function (response) {
+                      console.log("POST: ", response.data);
+                    //clear fields
+                    })
+                    .catch(function (error) {
+                      console.log("POST Error: ",  error);
+                    }); 
+
+// email the final paypal order 
+                  axios.post(mail_url,infoObj)
                     .then(function (response) {
                       console.log("POST: ", response.data);
                     //clear fields
@@ -323,8 +335,8 @@ export default {
     validate () {
         if (this.$refs.form.validate()){
           //alert("Capture event for both FG and GA")
-          fbq('trackCustom', 'Nohon - Form Submitted and validated ');
-          gtag('event', 'Nohon - Form Submitted and validated ');
+          fbq('trackCustom', 'Sonya - Nohon - Form Submitted and validated ');
+          gtag('event', 'Sonya - Nohon - Form Submitted and validated ');
           this.snackbar = true;
           //alert("Send data to database - selected:  "+ this.select );
           const dataObj = {

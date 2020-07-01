@@ -12,10 +12,10 @@ export default {
   methods: {
     nextPage() {
 
-      fbq('trackCustom', 'Nohon - Checkout Button Submitted');
-      gtag('event', 'Nogon - Checkout Button Submitted', {
-        event_category: "Nohon",
-        event_label : "Nohon Checkout"
+      fbq('trackCustom', ' Sonya Nohon - Checkout Button Submitted');
+      gtag('event', 'Sonya Nohon - Checkout Button Submitted', {
+        event_category: "Sonya Nohon",
+        event_label : "Sonya Nohon Checkout"
       });
 
       this.$router.push('/checkout')
