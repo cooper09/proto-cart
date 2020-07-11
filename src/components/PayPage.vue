@@ -240,7 +240,7 @@ export default {
       console.log("Remove following Item from cart: ", item);
       this.$store.dispatch('updateCart', item);
     },
-    payMethod() {
+    payMethod() {fbq
       const script = document.createElement('script');
       //cooper -  This the "sandbox account"
       //script.src = "https://www.paypal.com/sdk/js?client-id=AYvEZYKAlTLeErYUz9KdH_2twNwANrX9gWVlmR3D16GHndWk0lcrSXfDjle3TF-1jdiwfKMyUslZIHrW"
@@ -325,6 +325,9 @@ export default {
                     }); 
 
               this.$refs.form.reset();
+
+            fbq('trackCustom', 'Purchase Complete');
+            gtag('event', 'Purchase Complete');
 
               alert("Thank you. Your Purchase has been completed and your shipment is on its way!")
               

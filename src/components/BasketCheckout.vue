@@ -33,14 +33,7 @@
               <v-text-field label="Quantity" dense counter-value :value="selectedItem[0].quantity" class="margins"></v-text-field>
             </v-list>
 
-            <span class="right">
 
-              <!--    <v-btn color="primary"  @click="removeItem(item)">
-                      <v-icon>mdi-trash-can </v-icon>
-                      <span>Remove Item</span>
-                  </v-btn> -->
-
-            </span>
         </v-list-item>
                 
       </v-list-item-group>
@@ -54,7 +47,19 @@
     <br/><br/>     
             
    <div>Total: ${{floatTotal}} </div>
-   <br/><br/>
+
+                  <span class="right guarantee d-sm-none d-md-fl">
+                      <center><h3>Our Guarantee</h3></center><p></p>
+<p>Gually Goods strives to provide the best customer experience possible. If you're unsatisfied with your order we offer easy returns  for all domestic orders within 30 days of delivery.</p>
+              <!--    <v-btn color="primary"  @click="removeItem(item)">
+                      <v-icon>mdi-trash-can </v-icon>
+                      <span>Remove Item</span>
+                  </v-btn> -->
+                  <v-img src="http://sonyainc.net/images/30-day-guarantee-badge.png" width="30%"  class="right" ></v-img>
+               
+
+            </span>
+          <br/><br/>
       <img src="http://sonyainc.net/images/paypal.jpg" />
      
          <v-card-actions>
@@ -64,6 +69,7 @@
             </v-btn>
         </v-card-actions>
    <br/><br/>
+
    <div ref="paypal"></div>
   </v-container>
 </template>
@@ -128,4 +134,11 @@ export default {
   margins {
     margin-right: 2em;
   }
+  .guarantee {
+    position:relative;
+    bottom: 5em;
+    width: 50%;
+    padding: 1em;
+  }
+
 </style>
