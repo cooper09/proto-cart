@@ -6,7 +6,7 @@ const Inventory = {
     1: {
       name: "JJDM Personal Face Masks",
       price: 0.1,
-      image: 'http://sonyainc.net/images/single-box.jpg'
+      image: 'https://sonyainc.net/images/single-box.jpg'
     },
     
   }//end Inventory

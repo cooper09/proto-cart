@@ -278,6 +278,10 @@ export default {
                   console.log("Payment approved: ", data.ID );
                   console.log("Payment info: ", JSON.stringify(data));
 
+                  //Track completed transactions - Target Conversion
+                  fbq('trackCustom', 'Nohon - Purchase Complete');
+                  gtag('event', 'Nohon - Purchase Complete');
+
                   // cooper s - send captured data to DB
                   console.log("Send data to DB " , this.name , " address: ", this.address, " city: ", this.city," state: ", this.state, " zip: ", this.zip, " phone: ", this.phone, " email: ", this.email );
 
@@ -335,8 +339,8 @@ export default {
     validate () {
         if (this.$refs.form.validate()){
           //alert("Capture event for both FG and GA")
-          fbq('trackCustom', 'Sonya - Nohon - Form Submitted and validated ');
-          gtag('event', 'Sonya - Nohon - Form Submitted and validated ');
+          fbq('trackCustom', 'Nohon - Form Submitted and validated ');
+          gtag('event', 'Nohon - Form Submitted and validated ');
           this.snackbar = true;
           //alert("Send data to database - selected:  "+ this.select );
           const dataObj = {

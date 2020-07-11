@@ -26,7 +26,7 @@ export default new Vuex.Store({
         isFavourite: false,
         quantity: 1,
         category: 0,
-        image: 'http://sonyainc.net/images/Nohon-USB-cable-1.jpg'
+        image: 'https://sonyainc.net/images/Nohon-USB-cable-1.jpg'
       }
     ],
     userInfo: {

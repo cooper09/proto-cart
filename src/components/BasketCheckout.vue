@@ -55,7 +55,7 @@
             
    <div>Total: ${{floatTotal}} </div>
    <br/><br/>
-      <img src="http://sonyainc.net/images/paypal.jpg" />
+      <img src="https://sonyainc.net/images/paypal.jpg" />
      
          <v-card-actions>
             <v-btn color="primary"  @click="showPayPal()">
