@@ -6,13 +6,13 @@
         <span class="font-weight-light leftmargin hidden-sm-and-down" >VIRTUAL MALL</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
- <!--     <v-btn
+    <v-btn
         text
-        href="https://sonyainc.net/images/Nohon/Nohan-USB-cable-5.jpg"
+        href="https://sonyainc.net/generic-cart/nohon-usb-90.html"
         target="_blank"
       > 
-        <span class="mr-2">Product Description</span>
-      </v-btn> -->
+        <span class="mr-2">Product Detail</span>
+      </v-btn> 
     </v-app-bar>
     <v-content   class="animated fadeIn">
       <p v-if="isVisible"><MainView /></p>
