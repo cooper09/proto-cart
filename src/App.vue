@@ -8,10 +8,10 @@
       <v-spacer></v-spacer>
  <!--     <v-btn
         text
-        href=""
+        href="https://sonyainc.net/images/Nohon/Nohan-USB-cable-5.jpg"
         target="_blank"
       > 
-        <span class="mr-2">Link to Something Interesting</span>
+        <span class="mr-2">Product Description</span>
       </v-btn> -->
     </v-app-bar>
     <v-content   class="animated fadeIn">

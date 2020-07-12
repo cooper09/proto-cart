@@ -26,13 +26,7 @@
             <v-list>
               <v-text-field label="Quantity" dense counter-value :value="item.quantity" class="margins"></v-text-field>
             </v-list>
-
-            <span class="right">
-              <v-btn color="primary"  @click="removeItem(item)">
-                <v-icon>mdi-trash-can </v-icon>
-                <span>Remove Item</span>
-            </v-btn>
-            </span>
+      
         </v-list-item>
                 
       </v-list-item-group>
@@ -170,9 +164,7 @@ export default {
     newCart() {
       return this.$store.state.cart
     },
-    newCart() {
-      return this.$store.state.cart
-    },
+
   },//end computed
   
  //cooper s - picks up the THIS from the current scope and NOT the component scope
@@ -379,7 +371,7 @@ export default {
     cursor: pointer;
   }
   .container {
-    padding: 0;
+    padding: 1em;
   }
   .myform {
     width: 100%;

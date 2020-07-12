@@ -18,7 +18,7 @@ export default {
         event_label : "Sonya Nohon Checkout"
       });
 
-      this.$router.push('/checkout')
+      this.$router.push('/paypal')
       this.$store.dispatch('hideMainView')
     }
   }

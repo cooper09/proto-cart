@@ -4,9 +4,10 @@ const _ = require('lodash');
 
 const Inventory = {
     1: {
-      name: "JJDM Personal Face Masks",
-      price: 0.1,
-      image: 'http://sonyainc.net/images/single-box.jpg'
+      name: "Nohon Elbow Data Cable",
+      price: 7.99,
+      image: 'https://sonyainc.net/images/Nohon/Nohan-USB-cable-5.jpg'
+
     },
     
   }//end Inventory
