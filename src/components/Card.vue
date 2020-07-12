@@ -11,7 +11,7 @@
         <center><v-img src="https://sonyainc.net/images/Nohon/Nohan-USB-cable-5.jpg" aspect-ratio="1.0"  id="bgImg"></v-img></center>
         
         </v-responsive>
-        <v-card-text>
+        <v-card-text class="foobar">
             <h3>{{this.product.title}}</h3>
             <div class="grey--text"><b>{{this.product.description1}}</b></div>
                     <br/>
@@ -106,7 +106,7 @@ export default {
   .price {
     font-size: 1.4em;
     position:relative;
-    bottom: 2em;
+    bottom: 1.5em; 
     padding: 1em;
   }
 
@@ -114,11 +114,11 @@ export default {
     display: none;
     background: blue;
   }
-  .price {
-    font-size: 1.2em;
-  }
   .hide {
     display: none;
     background: blue;
+  }
+  .foobar {
+    padding: 2em
   }
 </style>
