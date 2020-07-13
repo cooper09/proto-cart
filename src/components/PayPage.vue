@@ -270,6 +270,11 @@ export default {
                   console.log("Payment approved: ", data.ID );
                   console.log("Payment info: ", JSON.stringify(data));
 
+
+            fbq('trackCustom', 'Nohon - Purchase Complete');
+            gtag('event', 'Nohon - Purchase Complete');
+
+
                   // cooper s - send captured data to DB
                   console.log("Send data to DB " , this.name , " address: ", this.address, " city: ", this.city," state: ", this.state, " zip: ", this.zip, " phone: ", this.phone, " email: ", this.email );
 
@@ -318,10 +323,7 @@ export default {
 
               this.$refs.form.reset();
 
-            fbq('trackCustom', 'Purchase Complete');
-            gtag('event', 'Purchase Complete');
-
-              alert("Thank you. Your Purchase has been completed and your shipment is on its way!")
+            alert("Thank you. Your Purchase has been completed and your shipment is on its way!")
               
         }// on Approval
       })//end windows.paypal.Buttons
