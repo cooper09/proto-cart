@@ -8,7 +8,7 @@
         <v-responsive class="pt-4">
             
  <!-- <center><img src="https://via.placeholder.com/300" /></center> -->
-        <center><v-img src="https://sonyainc.net/images/Nohon/Nohan-USB-cable-5.jpg" aspect-ratio="1.0"  id="bgImg"></v-img></center>
+        <center><v-img src="http://sonyainc.net/HB-blender/images/blender.png" aspect-ratio="1.0"  id="bgImg"></v-img></center>
         
         </v-responsive>
         <v-card-text class="foobar">

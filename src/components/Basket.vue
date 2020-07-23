@@ -12,10 +12,10 @@ export default {
   methods: {
     nextPage() {
 
-      fbq('trackCustom', ' Sonya Nohon - Checkout Button Submitted');
-      gtag('event', 'Sonya Nohon - Checkout Button Submitted', {
-        event_category: "Sonya Nohon",
-        event_label : "Sonya Nohon Checkout"
+      fbq('trackCustom', ' HB Blender  - Checkout Button Submitted');
+      gtag('event', 'HB Blender  - Checkout Button Submitted', {
+        event_category: "HB Blender ",
+        event_label : "HB Blender  Checkout"
       });
 
       this.$router.push('/paypal')

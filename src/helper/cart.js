@@ -4,9 +4,9 @@ const _ = require('lodash');
 
 const Inventory = {
     1: {
-      name: "Nohon Elbow Data Cable",
-      price: 7.99,
-      image: 'https://sonyainc.net/images/Nohon/Nohan-USB-cable-5.jpg'
+      name: "Hamilton Beach Personal Blender for Shakes and Smoothies",
+      price: 39.99,
+      image: 'http://sonyainc.net/HB-blender/images/blender.png'
 
     },
     

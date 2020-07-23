@@ -6,6 +6,7 @@
                 <span>Back to Store</span>
             </v-btn>
           </span>
+          <br/><br/>
     <v-list enabled>
       <h3>Selected Items:</h3>
       <v-list-item-group v-model="newCart" color="primary">
@@ -14,11 +15,12 @@
           :key="i"
           class=""
         >
+        
           <v-list-item-avatar class="margins">
             <img :src='item.product.image' width="24" height="24" >
           </v-list-item-avatar>
           <v-list-item-content>
-            <v-list>
+            <v-list class="hidden-sm-and-down">
              {{item.product.name}} <span class="left">price: ${{item.product.price}}</span>
             </v-list>
           </v-list-item-content>
@@ -232,7 +234,7 @@ export default {
       console.log("Remove following Item from cart: ", item);
       this.$store.dispatch('updateCart', item);
     },
-    payMethod() {fbq
+    payMethod() {
       const script = document.createElement('script');
       //cooper -  This the "sandbox account"
       //script.src = "https://www.paypal.com/sdk/js?client-id=AYvEZYKAlTLeErYUz9KdH_2twNwANrX9gWVlmR3D16GHndWk0lcrSXfDjle3TF-1jdiwfKMyUslZIHrW"
@@ -271,8 +273,8 @@ export default {
                   console.log("Payment info: ", JSON.stringify(data));
 
 
-            fbq('trackCustom', 'Nohon - Purchase Complete');
-            gtag('event', 'Nohon - Purchase Complete');
+            fbq('trackCustom', 'HB Blender - Purchase Complete');
+            gtag('event', 'HB Blender  - Purchase Complete');
 
 
                   // cooper s - send captured data to DB
@@ -332,8 +334,8 @@ export default {
     validate () {
         if (this.$refs.form.validate()){
           //alert("Capture event for both FG and GA")
-          fbq('trackCustom', 'Sonya - Nohon - Form Submitted and validated ');
-          gtag('event', 'Sonya - Nohon - Form Submitted and validated ');
+          fbq('trackCustom', 'HB Blender  - Form Submitted and validated ');
+          gtag('event', 'HB Blender - Form Submitted and validated ');
           this.snackbar = true;
           //alert("Send data to database - selected:  "+ this.select );
           const dataObj = {

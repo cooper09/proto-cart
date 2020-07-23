@@ -13,12 +13,12 @@ export default new Vuex.Store({
     products: [
       {
         id: 1,
-        title: 'Nohon Elbow Data Cable',
-        description1: '90 Degree USB Data Charger Fast Cable for iPhone ',
-        description2: '90 degree elbow is durable',
-        description3: 'Simple and innovative design',
-        description4: 'Fast charging, no battery damage',
-        price: 7.99,
+        title: 'Hamilton Beach Personal Blender for Shakes and Smoothies with 14oz Travel Cup and Lid, Raspberry',
+        description1: 'Compact design and BPA free: Great for home, office and travel with on the go portability ',
+        description2: 'Blend and go: Blend and drink from the 14 ounce jar and lid which are both dishwasher safe',
+        description3: 'Stainless steel blades: Ice crushing power for smooth results',
+        description4: '',
+        price: 39.99,
         ratings: 3,
         reviews: 5,
         isAddedToCart: false,
@@ -26,7 +26,7 @@ export default new Vuex.Store({
         isFavourite: false,
         quantity: 1,
         category: 0,
-        image: 'http://sonyainc.net/images/Nohon-USB-cable-1.jpg'
+        image: 'http://sonyainc.net/HB-blender/images/blender.png'
       }
     ],
     userInfo: {

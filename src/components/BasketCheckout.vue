@@ -102,10 +102,10 @@ export default {
     },
     showStore() {
       //this.$router.push('/')
-      fbq('trackCustom', 'Sonya - Back to Store Button Submitted');
-      gtag('event', 'Sonya - Nohon - Back to Store Submitted', {
-        event_category: "Sonya - Nohon",
-        event_label : "Sonya - Nohon Back To Store"
+      fbq('trackCustom', 'HB Blender  - Back to Store Button Submitted');
+      gtag('event', 'HB Blender  - Nohon - Back to Store Submitted', {
+        event_category: "HB Blender ",
+        event_label : "HB Blender  Back To Store"
       });
       this.$store.dispatch('showMainView');
       this.$store.dispatch('hideBasket')
