@@ -13,12 +13,11 @@ export default new Vuex.Store({
     products: [
       {
         id: 1,
-        title: 'Nohon Elbow Data Cable',
-        description1: '90 Degree USB Data Charger Fast Cable for iPhone ',
-        description2: '90 degree elbow is durable',
-        description3: 'Simple and innovative design',
-        description4: 'Fast charging, no battery damage',
-        price: 7.99,
+        title: 'The Gem In I',
+        description1: 'Dara Carter ',
+        description2: 'Album  Download',
+        description4: '',
+        price: 9.99,
         ratings: 3,
         reviews: 5,
         isAddedToCart: false,
@@ -26,7 +25,7 @@ export default new Vuex.Store({
         isFavourite: false,
         quantity: 1,
         category: 0,
-        image: 'http://sonyainc.net/images/Nohon-USB-cable-1.jpg'
+        image: 'https://sonyainc.net/Dara/Gem_in_I.png'
       }
     ],
     userInfo: {

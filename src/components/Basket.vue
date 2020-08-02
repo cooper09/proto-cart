@@ -12,14 +12,16 @@ export default {
   methods: {
     nextPage() {
 
-      fbq('trackCustom', ' Sonya Nohon - Checkout Button Submitted');
-      gtag('event', 'Sonya Nohon - Checkout Button Submitted', {
-        event_category: "Sonya Nohon",
-        event_label : "Sonya Nohon Checkout"
+      fbq('trackCustom', ' Dara - GemInI - Checkout Button Submitted');
+      gtag('event', 'Dara - GemInI - Checkout Button Submitted', {
+        event_category: "Dara - GemInI",
+        event_label : "Dara - GemInI Checkout"
       });
 
-      this.$router.push('/paypal')
-      this.$store.dispatch('hideMainView')
+    // cooper s - instead of my paypal page go to Dara's checkout page
+      //this.$router.push('/paypal')
+      window.open("https://www.daracarter.com/music/","_blank, directories=yes")
+      //this.$store.dispatch('hideMainView')
     }
   }
 };//end export

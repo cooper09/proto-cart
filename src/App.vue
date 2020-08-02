@@ -2,16 +2,16 @@
   <v-app>
     <v-app-bar app>
       <v-toolbar-title class="headline text-uppercase">
-        <span>Gually Goods</span>
+        <span>DARA CARTER</span>
         <span class="font-weight-light leftmargin hidden-sm-and-down" >VIRTUAL MALL</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
     <v-btn
         text
-        href="https://sonyainc.net/generic-cart/nohon-usb-90.html"
+        href="https://daracarter.com"
         target="_blank"
       > 
-        <span class="mr-2">Product Detail</span>
+        <span class="mr-2">Her Music</span>
       </v-btn> 
     </v-app-bar>
     <v-content   class="animated fadeIn">

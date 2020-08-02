@@ -5,8 +5,8 @@ const _ = require('lodash');
 const Inventory = {
     1: {
       name: "Nohon Elbow Data Cable",
-      price: 7.99,
-      image: 'https://sonyainc.net/images/Nohon/Nohan-USB-cable-5.jpg'
+      price: 9.99,
+      image: 'https://sonyainc.net/Dara/Gem_in_I.png'
 
     },
     
