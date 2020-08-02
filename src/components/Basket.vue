@@ -12,15 +12,13 @@ export default {
   methods: {
     nextPage() {
 
-      fbq('trackCustom', ' Dara - GemInI - Checkout Button Submitted');
-      gtag('event', 'Dara - GemInI - Checkout Button Submitted', {
-        event_category: "Dara - GemInI",
-        event_label : "Dara - GemInI Checkout"
+      fbq('trackCustom', ' Candles - Checkout Button Submitted');
+      gtag('event', 'Candles - Checkout Button Submitted', {
+        event_category: "Candles",
+        event_label : "Candles Checkout"
       });
 
-    // cooper s - instead of my paypal page go to Dara's checkout page
       this.$router.push('/paypal')
-      //window.open("https://www.daracarter.com/music/","_blank, directories=yes")
       this.$store.dispatch('hideMainView')
     }
   }
