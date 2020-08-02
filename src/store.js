@@ -13,11 +13,11 @@ export default new Vuex.Store({
     products: [
       {
         id: 1,
-        title: 'The Gem In I',
-        description1: 'Dara Carter ',
-        description2: 'Album  Download',
+        title: 'Vance Kitira Timber Pillar Candle-Grape Green',
+        description1: '',
+        description2: '',
         description4: '',
-        price: 9.99,
+        price: 29.99,
         ratings: 3,
         reviews: 5,
         isAddedToCart: false,
@@ -25,7 +25,7 @@ export default new Vuex.Store({
         isFavourite: false,
         quantity: 1,
         category: 0,
-        image: 'https://sonyainc.net/Dara/Gem_in_I.png'
+        image: 'http://sonyainc.net/candles-cart/kitra-candle.jpg'
       }
     ],
     userInfo: {

@@ -8,7 +8,7 @@
         <v-responsive class="pt-4">
             
  <!-- <center><img src="https://via.placeholder.com/300" /></center> -->
-        <center><v-img src="https://sonyainc.net/Dara/Gem_in_I.png" aspect-ratio="1.0"  id="bgImg"></v-img></center>
+        <center><v-img src="http://sonyainc.net/candles-cart/kitra-candle.jpg" aspect-ratio="1.0"  id="bgImg"></v-img></center>
         
         </v-responsive>
         <v-card-text class="foobar">

@@ -4,9 +4,9 @@ const _ = require('lodash');
 
 const Inventory = {
     1: {
-      name: "Nohon Elbow Data Cable",
-      price: 9.99,
-      image: 'https://sonyainc.net/Dara/Gem_in_I.png'
+      name: "Vance Kitira Timber Pillar Candle-Grape Green",
+      price: 29.99,
+      image: 'http://sonyainc.net/candles-cart/kitra-candle.jpg'
 
     },
     

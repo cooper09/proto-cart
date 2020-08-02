@@ -19,9 +19,9 @@ export default {
       });
 
     // cooper s - instead of my paypal page go to Dara's checkout page
-      //this.$router.push('/paypal')
-      window.open("https://www.daracarter.com/music/","_blank, directories=yes")
-      //this.$store.dispatch('hideMainView')
+      this.$router.push('/paypal')
+      //window.open("https://www.daracarter.com/music/","_blank, directories=yes")
+      this.$store.dispatch('hideMainView')
     }
   }
 };//end export

@@ -2,16 +2,16 @@
   <v-app>
     <v-app-bar app>
       <v-toolbar-title class="headline text-uppercase">
-        <span>DARA CARTER</span>
+        <span>Sonya</span>
         <span class="font-weight-light leftmargin hidden-sm-and-down" >VIRTUAL MALL</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
     <v-btn
         text
-        href="https://daracarter.com"
+        href="https://sonyainc.net/candles-cart/product-page.html"
         target="_blank"
       > 
-        <span class="mr-2">Her Music</span>
+        <span class="mr-2">Product Page</span>
       </v-btn> 
     </v-app-bar>
     <v-content   class="animated fadeIn">
