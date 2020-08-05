@@ -102,10 +102,10 @@ export default {
     },
     showStore() {
       //this.$router.push('/')
-      fbq('trackCustom', 'Candles - Back to Store Button Submitted');
-      gtag('event', 'Candles - Back to Store Submitted', {
-        event_category: "Candles",
-        event_label : "Candles Back To Store"
+      fbq('trackCustom', 'Vintium - Back to Store Button Submitted');
+      gtag('event', 'Vintium - Back to Store Submitted', {
+        event_category: "Vintium",
+        event_label : "Vintium - Back To Store"
       });
       this.$store.dispatch('showMainView');
       this.$store.dispatch('hideBasket')

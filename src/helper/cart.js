@@ -4,9 +4,9 @@ const _ = require('lodash');
 
 const Inventory = {
     1: {
-      name: "Vance Kitira Timber Pillar Candle-Grape Green",
-      price: 29.99,
-      image: 'http://sonyainc.net/candles-cart/kitra-candle.jpg'
+      name: "Goucho Collection",
+      price: 89.99,
+      image: 'http://sonyainc.net/cart-vintium/goucho-brown.jpg'
 
     },
     

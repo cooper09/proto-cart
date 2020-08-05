@@ -13,11 +13,11 @@ export default new Vuex.Store({
     products: [
       {
         id: 1,
-        title: 'Vance Kitira Timber Pillar Candle-Grape Green',
-        description1: '',
+        title: 'Goucho Collection',
+        description1: 'THE ONE CLASSIC BAG  is part of “VINTIUM GAUCHO collection" synonymous of tradition and culture in the wine world with a touch of youth and freedom within the colors.',
         description2: '',
         description4: '',
-        price: 29.99,
+        price: 89.99,
         ratings: 3,
         reviews: 5,
         isAddedToCart: false,
@@ -25,7 +25,7 @@ export default new Vuex.Store({
         isFavourite: false,
         quantity: 1,
         category: 0,
-        image: 'http://sonyainc.net/candles-cart/kitra-candle.jpg'
+        image: 'https://sonyainc.net/cart-vintium/goucho-brown.jpg'
       }
     ],
     userInfo: {

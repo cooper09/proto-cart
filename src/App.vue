@@ -8,7 +8,7 @@
       <v-spacer></v-spacer>
     <v-btn
         text
-        href="https://sonyainc.net/candles-cart/product-page.html"
+        href="https://sonyainc.net/cart-vintium/product-page.html"
         target="_blank"
       > 
         <span class="mr-2">Product Page</span>

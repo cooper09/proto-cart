@@ -12,10 +12,10 @@ export default {
   methods: {
     nextPage() {
 
-      fbq('trackCustom', ' Candles - Checkout Button Submitted');
-      gtag('event', 'Candles - Checkout Button Submitted', {
-        event_category: "Candles",
-        event_label : "Candles Checkout"
+      fbq('trackCustom', ' Vintium - Checkout Button Submitted');
+      gtag('event', 'Vintium - Checkout Button Submitted', {
+        event_category: "Vintium",
+        event_label : "Vintium - Checkout"
       });
 
       this.$router.push('/paypal')
