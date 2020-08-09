@@ -25,7 +25,7 @@ export default new Vuex.Store({
         isFavourite: false,
         quantity: 1,
         category: 0,
-        image: 'https://sonyainc.net/cart-vintium/goucho-brown.jpg'
+        image: 'https://sonyainc.net/cart-vintium/images/baggauchoblack4.jpg'
       }
     ],
     userInfo: {

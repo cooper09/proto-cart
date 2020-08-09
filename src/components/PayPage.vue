@@ -271,8 +271,8 @@ export default {
                   console.log("Payment info: ", JSON.stringify(data));
 
 
-            fbq('trackCustom', 'Nohon - Purchase Complete');
-            gtag('event', 'Nohon - Purchase Complete');
+            fbq('trackCustom', 'Vintium - Purchase Complete');
+            gtag('event', 'Vintium - Purchase Complete');
 
 
                   // cooper s - send captured data to DB
@@ -332,8 +332,8 @@ export default {
     validate () {
         if (this.$refs.form.validate()){
           //alert("Capture event for both FG and GA")
-          fbq('trackCustom', 'Candles - Form Submitted and validated ');
-          gtag('event', 'Candles - Form Submitted and validated ');
+          fbq('trackCustom', 'Vintium - Form Submitted and validated ');
+          gtag('event', 'Vintium - Form Submitted and validated ');
           this.snackbar = true;
           //alert("Send data to database - selected:  "+ this.select );
           const dataObj = {

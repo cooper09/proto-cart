@@ -6,7 +6,7 @@ const Inventory = {
     1: {
       name: "Goucho Collection",
       price: 89.99,
-      image: 'http://sonyainc.net/cart-vintium/goucho-brown.jpg'
+      image: 'https://sonyainc.net/cart-vintium/images/baggauchoblack4.jpg'
 
     },
     
