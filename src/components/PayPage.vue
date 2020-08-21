@@ -264,7 +264,7 @@ export default {
                         ]
                     })
                 },
-                onApprove: async (data, actions ) => {
+        onApprove: async (data, actions ) => {
                   const order = await actions.order.capture();
                   this.paidFor = true;
                   console.log("Payment approved: ", data.ID );
@@ -326,6 +326,8 @@ export default {
             alert("Thank you. Your Purchase has been completed and your shipment is on its way!")
               
         }// on Approval
+        //add error code here...
+
       })//end windows.paypal.Buttons
       .render(this.$refs.paypal )
     },//setLoaded
