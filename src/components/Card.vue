@@ -6,7 +6,7 @@
 
     <v-card class="pa-1">
         <v-responsive class="pt-4">
-            
+
  <!-- <center><img src="https://via.placeholder.com/300" /></center> -->
         <center><v-img src="https://sonyainc.net/cart-vintium/images/baggauchoblack1.jpg" aspect-ratio="1.0"  id="bgImg"></v-img></center>
         

@@ -235,10 +235,10 @@ export default {
     payMethod() {fbq
       const script = document.createElement('script');
       //cooper -  This the "sandbox account"
-      //script.src = "https://www.paypal.com/sdk/js?client-id=AYvEZYKAlTLeErYUz9KdH_2twNwANrX9gWVlmR3D16GHndWk0lcrSXfDjle3TF-1jdiwfKMyUslZIHrW"
+      script.src = "https://www.paypal.com/sdk/js?client-id=AYvEZYKAlTLeErYUz9KdH_2twNwANrX9gWVlmR3D16GHndWk0lcrSXfDjle3TF-1jdiwfKMyUslZIHrW"
       
       //this is "production"
-      script.src = "https://www.paypal.com/sdk/js?client-id=AajrrhIOM-Pup_gMF1VA0StsL9mhknzsGuuAdvZWNSeoPER6Q45sd0kCKk6yv_YU3fVeTiR_j3J74uZs"
+      //script.src = "https://www.paypal.com/sdk/js?client-id=AajrrhIOM-Pup_gMF1VA0StsL9mhknzsGuuAdvZWNSeoPER6Q45sd0kCKk6yv_YU3fVeTiR_j3J74uZs"
       script.addEventListener("load", this.setLoaded);
       document.body.appendChild(script);
 
@@ -272,7 +272,10 @@ export default {
 
 
             fbq('trackCustom', 'Vintium - Purchase Complete');
-            gtag('event', 'Vintium - Purchase Complete');
+            gtag('event', 'Vintium - Purchase Complete', {
+                event_category: "Vintium",
+                event_label : "Vintium - Purchase Complete"
+              });
 
 
                   // cooper s - send captured data to DB
@@ -335,7 +338,11 @@ export default {
         if (this.$refs.form.validate()){
           //alert("Capture event for both FG and GA")
           fbq('trackCustom', 'Vintium - Form Submitted and validated ');
-          gtag('event', 'Vintium - Form Submitted and validated ');
+          gtag('event', 'Vintium - Form Submitted and validated', {
+                event_category: "Vintium",
+                event_label : "Vintium - Form Submitted and validated"
+              });
+          
           this.snackbar = true;
           //alert("Send data to database - selected:  "+ this.select );
           const dataObj = {

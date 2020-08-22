@@ -5,6 +5,7 @@
     <!-- for the length of the product list, build a card and display it -->
     <v-layout row wrap >
       <v-flex  v-for="product in mydata" :key="product.id">
+        <h3>This Weeks Special: Classic Goucho Black Leather Wine Bag</h3>
         <Card v-bind:product="product" /> 
       </v-flex>
     </v-layout> 
