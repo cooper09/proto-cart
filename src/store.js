@@ -16,6 +16,7 @@ export default new Vuex.Store({
         title: 'Goucho Collection',
         description1: 'THE ONE CLASSIC BAG  is part of “VINTIUM GAUCHO collection" synonymous of tradition and culture in the wine world with a touch of youth and freedom within the colors.',
         description2: 'Free Shipping',
+        description3:'',
         description4: '',
         price: 89.99,
         ratings: 3,

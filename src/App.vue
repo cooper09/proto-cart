@@ -3,7 +3,7 @@
     <v-app-bar app>
       <v-toolbar-title class="headline text-uppercase">
         <span>Gually</span>
-        <span class="font-weight-light leftmargin " >VIRTUAL MALL</span>
+        <span class="font-weight-light leftmargin hidden-sm-and-down" >VIRTUAL MALL</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
     <v-btn

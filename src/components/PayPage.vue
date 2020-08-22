@@ -239,10 +239,10 @@ export default {
     payMethod() {fbq
       const script = document.createElement('script');
       //cooper -  This the "sandbox account"
-      script.src = "https://www.paypal.com/sdk/js?client-id=AYvEZYKAlTLeErYUz9KdH_2twNwANrX9gWVlmR3D16GHndWk0lcrSXfDjle3TF-1jdiwfKMyUslZIHrW"
+      //script.src = "https://www.paypal.com/sdk/js?client-id=AYvEZYKAlTLeErYUz9KdH_2twNwANrX9gWVlmR3D16GHndWk0lcrSXfDjle3TF-1jdiwfKMyUslZIHrW"
       
       //this is "production"
-      //script.src = "https://www.paypal.com/sdk/js?client-id=AajrrhIOM-Pup_gMF1VA0StsL9mhknzsGuuAdvZWNSeoPER6Q45sd0kCKk6yv_YU3fVeTiR_j3J74uZs"
+      script.src = "https://www.paypal.com/sdk/js?client-id=AajrrhIOM-Pup_gMF1VA0StsL9mhknzsGuuAdvZWNSeoPER6Q45sd0kCKk6yv_YU3fVeTiR_j3J74uZs"
       script.addEventListener("load", this.setLoaded);
       document.body.appendChild(script);
 
@@ -283,7 +283,7 @@ export default {
 
 
                   // cooper s - send captured data to DB
-                  console.log("Send data to DB " , this.name , " address: ", this.address, " city: ", this.city," state: ", this.state, " zip: ", this.zip, " phone: ", this.phone, " email: ", this.email );
+                  console.log("Send data to DB -items:  ", this.newCart[0].product.name , this.name , " address: ", this.address, " city: ", this.city," state: ", this.state, " zip: ", this.zip, " phone: ", this.phone, " email: ", this.email );
 
                   var timestamp = new Date();
 
@@ -291,7 +291,7 @@ export default {
                     orderId: data.orderID,
                     paymentId: data.paymentID,
                     payerId:data.payerID,
-                    items: this.newCart, //this.getCartItems,
+                    items: this.newCart[0].product.name, //this.getCartItems,
                     amount:this.getTotal,
                     name: this.name,
                     address: this.address,
