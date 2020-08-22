@@ -26,7 +26,7 @@
           </v-list-item-avatar>
           <v-list-item-content>
             <v-list>
-             {{selectedItem[0].title}} <span class="left">price: ${{selectedItem[0].price}}</span>
+            <span>{{selectedItem[0].title}} </span><span class="left">price: ${{selectedItem[0].price}}</span>
             </v-list>
           </v-list-item-content>
       </span>

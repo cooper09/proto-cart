@@ -6,6 +6,7 @@
                 <span>Back to Store</span>
             </v-btn>
           </span>
+          <br/><br/>
     <v-list enabled>
       <h3>Selected Items:</h3>
       <v-list-item-group v-model="newCart" color="primary">
@@ -19,12 +20,15 @@
           </v-list-item-avatar>
           <v-list-item-content>
             <v-list>
-             {{item.product.name}} <span class="left">price: ${{item.product.price}}</span>
+             <span class="left"><span class="hidden-sm-and-down">price: ${{item.product.price}}</span></span>
             </v-list>
           </v-list-item-content>
-
             <v-list>
-              <v-text-field label="Quantity" dense counter-value :value="item.quantity" class="margins"></v-text-field>
+            <v-row>
+
+                <v-text-field label="Quantity" dense counter-value :value="item.quantity" class="margins"></v-text-field>
+
+            </v-row>
             </v-list>
       
         </v-list-item>
@@ -389,6 +393,11 @@ export default {
     margin-left: 1em;
     margin-right: 1em;
   }
-
+ .right {
+   float:right;
+   background: aqua;
+   position: relative;
+   left: 3em;
+ }
 
 </style>
